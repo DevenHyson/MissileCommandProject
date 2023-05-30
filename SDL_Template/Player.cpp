@@ -3,19 +3,9 @@
 #include "PhysicsManager.h"
 
 void Player::HandleMovement() {
-	if (mInput->KeyDown(SDL_SCANCODE_RIGHT)) {
-		Translate(Vec2_Right * mMoveSpeed * mTimer->DeltaTime(), World);
-	}
-	else if (mInput->KeyDown(SDL_SCANCODE_LEFT)) {
-		Translate(-Vec2_Right * mMoveSpeed * mTimer->DeltaTime(), World);
-	}
-	else if (mInput->KeyDown(SDL_SCANCODE_UP)) {
-		Translate(-Vec2_Up * mMoveSpeed * mTimer->DeltaTime(), World);
-	}
-	else if (mInput->KeyDown(SDL_SCANCODE_DOWN)) {
-		Translate(Vec2_Up * mMoveSpeed * mTimer->DeltaTime(), World);
-	}
-
+	Position(mInput->MousePosition());
+	//Position with nothing in () returns the position
+	//Position with something in () sets the position
 
 }
 

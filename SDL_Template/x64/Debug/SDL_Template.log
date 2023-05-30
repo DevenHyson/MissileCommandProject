@@ -1,81 +1,54 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GalagaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  AnimatedGLTexture.cpp
-  AnimatedTexture.cpp
-  AssetManager.cpp
-  AudioManager.cpp
-  BezierPath.cpp
-  BoxCollider.cpp
-  CircleCollider.cpp
-  Collider.cpp
-  GameEntity.cpp
-  GameManager.cpp
-  GLGraphics.cpp
-  GLTexture.cpp
-  Graphics.cpp
-  InputManager.cpp
-  main.cpp
-  PhysEntity.cpp
-  PhysicsManager.cpp
-  Player.cpp
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(531,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GalagaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   PlayScreen.cpp
-  Random.cpp
+  Player.cpp
   Generating Code...
-  Compiling...
-  Scoreboard.cpp
-  ScreenManager.cpp
-  ShaderUtil.cpp
-  StartScreen.cpp
-  Texture.cpp
-  Timer.cpp
-  tinyxml2.cpp
-  Generating Code...
-  SDL_Template.vcxproj -> C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\x64\Debug\SDLFramework.exe
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\dep\devel\x64\glew32.dll
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\dep\devel\x64\glfw3.dll
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\dep\devel\x64\libtiff-5.dll
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\dep\devel\x64\libwebp-7.dll
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\dep\devel\x64\SDL2.dll
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\dep\devel\x64\SDL2_image.dll
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\dep\devel\x64\SDL2_mixer.dll
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\dep\devel\x64\SDL2_ttf.dll
+  SDL_Template.vcxproj -> C:\Users\joshu\source\repos\Test\x64\Debug\SDLFramework.exe
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\dep\devel\x64\glew32.dll
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\dep\devel\x64\glfw3.dll
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\dep\devel\x64\libtiff-5.dll
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\dep\devel\x64\libwebp-7.dll
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\dep\devel\x64\SDL2.dll
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\dep\devel\x64\SDL2_image.dll
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\dep\devel\x64\SDL2_mixer.dll
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\dep\devel\x64\SDL2_ttf.dll
           8 file(s) copied.
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\AnimatedEnemies.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\AnitAir1.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\ARCADE.TTF
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Black.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Bosses.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\BoxCollider.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\BroadPhaseCollider.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Building1.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Bullet.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\CaptureBeam.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\CircleCollider.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Cursor.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\emulogic.ttf
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\EnemyExplosion.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\GalagaLogo.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Ground.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Hill.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\LevelFlags.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\MissileAmmo.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\namco__.ttf
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\PlayerExplosion.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\PlayerShips.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\SideAntiAir.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\SideAntiAir2.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Stars.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Target.png
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\MUS\GameStart.wav
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\SFX\BossDestroyed.wav
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\SFX\BossInjured.wav
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\SFX\ButterflyDestroyed.wav
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\SFX\coin_credit.wav
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\SFX\Fire.wav
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\SFX\FlagSound.wav
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\SFX\PlayerExplosion.wav
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\SFX\WaspDestroyed.wav
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Shaders\fs.shader
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Assets\Shaders\vs.shader
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\AnimatedEnemies.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\AnitAir1.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\ARCADE.TTF
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Black.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Bosses.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\BoxCollider.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\BroadPhaseCollider.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Building1.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Bullet.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\CaptureBeam.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\CircleCollider.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Cursor.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\emulogic.ttf
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\EnemyExplosion.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\GalagaLogo.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Ground.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Hill.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\LevelFlags.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\MissileAmmo.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\namco__.ttf
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\PlayerExplosion.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\PlayerShips.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\SideAntiAir.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\SideAntiAir2.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Stars.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Target.png
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\MUS\GameStart.wav
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\SFX\BossDestroyed.wav
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\SFX\BossInjured.wav
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\SFX\ButterflyDestroyed.wav
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\SFX\coin_credit.wav
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\SFX\Fire.wav
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\SFX\FlagSound.wav
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\SFX\PlayerExplosion.wav
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\SFX\WaspDestroyed.wav
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Shaders\fs.shader
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Assets\Shaders\vs.shader
   37 File(s) copied
-  C:\Users\spike\OneDrive\Desktop\Backup - Copy\GLFramework - Copy\SDL_Template\..\Data\Level1.xml
+  C:\Users\joshu\source\repos\Test\SDL_Template\..\Data\Level1.xml
   1 File(s) copied

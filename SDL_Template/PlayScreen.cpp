@@ -5,7 +5,7 @@
 PlayScreen::PlayScreen() {
 	mTimer = Timer::Instance();
 	mAudio = AudioManager::Instance();
-
+	SDL_ShowCursor(SDL_DISABLE);
 	delete mPlayer;
 	mPlayer = new Player();
 	mPlayer->Parent(this);
