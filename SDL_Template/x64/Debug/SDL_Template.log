@@ -1,5 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GalagaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  PlayScreen.cpp
+  Player.cpp
   SDL_Template.vcxproj -> C:\Users\spike\OneDrive\Desktop\New folder\x64\Debug\SDLFramework.exe
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glew32.dll
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glfw3.dll

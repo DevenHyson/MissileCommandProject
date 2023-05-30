@@ -28,7 +28,7 @@ Player::Player() {
 	mLives = 2;
 
 	mTarget = new GLTexture("Target.png", 0, 0, 130, 130);
-	mTarget->Scale(Vector2(0.4f, 0.4f));
+	mTarget->Scale(Vector2(0.3f, 0.3f));
 	mTarget->Parent(this);
 	mTarget->Position(Vec2_Zero);
 
