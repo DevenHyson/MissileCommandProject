@@ -24,69 +24,69 @@ PlayScreen::PlayScreen() {
 
 	//Cities
 
-	mBuilding1 = new GLTexture("Building1.png", 0, 100, 1920, 1080);
+	mBuilding1 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
 	mBuilding1->Parent(mBuildings);
-	mBuilding1->Position(-150, -10);
-	mBuilding1->Scale(Vector2(0.8f, 0.8f));
+	mBuilding1->Position(-300, 220);
+	mBuilding1->Scale(Vector2(0.6f, 0.2f));
 
-	mBuilding2 = new GLTexture("Building1.png", 0, 100, 1920, 1080);
+	mBuilding2 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
 	mBuilding2->Parent(mBuildings);
-	mBuilding2->Position(80, 30);
-	mBuilding2->Scale(Vector2(0.8f, 0.8f));
+	mBuilding2->Position(-50, 220);
+	mBuilding2->Scale(Vector2(0.6f, 0.2f));
 
-	mBuilding3 = new GLTexture("Building1.png", 0, 100, 1920, 1080);
+	mBuilding3 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
 	mBuilding3->Parent(mBuildings);
-	mBuilding3->Position(310, -10);
-	mBuilding3->Scale(Vector2(0.8f, 0.8f));
+	mBuilding3->Position(200, 220);
+	mBuilding3->Scale(Vector2(0.6f, 0.2f));
 
-	mBuilding4 = new GLTexture("Building1.png", 0, 100, 1920, 1080);
+	mBuilding4 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
 	mBuilding4->Parent(mBuildings);
-	mBuilding4->Position(760, -10);
-	mBuilding4->Scale(Vector2(0.8f, 0.8f));
+	mBuilding4->Position(625, 220);
+	mBuilding4->Scale(Vector2(0.6f, 0.2f));
 
-	mBuilding5 = new GLTexture("Building1.png", 0, 100, 1920, 1080);
+	mBuilding5 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
 	mBuilding5->Parent(mBuildings);
-	mBuilding5->Position(990, 30);
-	mBuilding5->Scale(Vector2(0.8f, 0.8f));
+	mBuilding5->Position(875, 220);
+	mBuilding5->Scale(Vector2(0.6f, 0.2f));
 
-	mBuilding6 = new GLTexture("Building1.png", 0, 100, 1920, 1080);
+	mBuilding6 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
 	mBuilding6->Parent(mBuildings);
-	mBuilding6->Position(1200, -10);
-	mBuilding6->Scale(Vector2(0.8f, 0.8f));
+	mBuilding6->Position(1125, 220);
+	mBuilding6->Scale(Vector2(0.6f, 0.2f));
 
 	//Hill Sprites, for some reason they won't work named what they actually are. These are the green plates under the batteries
 
 	mAntiAir1 = new GLTexture("Hill.png", 0, 0, 126, 215);
 	mAntiAir1->Parent(mBuildings);
 	mAntiAir1->Position(-860, 280);
-	mAntiAir1->Scale(Vector2(1.2f, 0.5f));
+	mAntiAir1->Scale(Vector2(0.6f, 0.2f));
 
 	mAntiAir2 = new GLTexture("Hill.png", 0, 0, 126, 215);
 	mAntiAir2->Parent(mBuildings);
 	mAntiAir2->Position(13, 280);
-	mAntiAir2->Scale(Vector2(1.2f, 0.5f));
+	mAntiAir2->Scale(Vector2(0.6f, 0.2f));
 
 	mAntiAir3 = new GLTexture("Hill.png", 0, 0, 126, 215);
 	mAntiAir3->Parent(mBuildings);
-	mAntiAir3->Position(860, 280);
-	mAntiAir3->Scale(Vector2(1.2f, 0.5f));
+	mAntiAir3->Position(880, 280);
+	mAntiAir3->Scale(Vector2(0.6f, 0.2f));
 
 	//Anti Air Sprites, for some reason they won't work named what they actually are.
 
 	mHill1 = new GLTexture("AnitAir1.png", 0, 100, 1920, 1080);
 	mHill1->Parent(mBuildings);
-	mHill1->Position(245, 530);
-	mHill1->Scale(Vector2(3.0f, 3.0f));
+	mHill1->Position(90, 360);
+	mHill1->Scale(Vector2(1.0f, 1.0f));
 
 	mHill2 = new GLTexture("SideAntiAir.png", 0, 100, 1920, 1080);
 	mHill2->Parent(mBuildings);
-	mHill2->Position(-628, 530);
-	mHill2->Scale(Vector2(3.0f, 3.0f));
+	mHill2->Position(-782, 360);
+	mHill2->Scale(Vector2(1.0f, 1.0f));
 
 	mHill3 = new GLTexture("SideAntiAir2.png", 0, 100, 1920, 1080);
 	mHill3->Parent(mBuildings);
-	mHill3->Position(1092, 530);
-	mHill3->Scale(Vector2(3.0f, 3.0f));
+	mHill3->Position(957, 360);
+	mHill3->Scale(Vector2(1.0f, 1.0f));
 
 	//Battery Ammo
 	//
@@ -94,129 +94,129 @@ PlayScreen::PlayScreen() {
 
 	mLMissileAmmo1 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mLMissileAmmo1->Parent(this);
-	mLMissileAmmo1->Position(100, 1025);
+	mLMissileAmmo1->Position(100, 1035);
 	mLMissileAmmo1->Scale(Vector2(1.0f, 1.0f));
 	mLMissileAmmo2 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mLMissileAmmo2->Parent(this);
-	mLMissileAmmo2->Position(88, 1035);
+	mLMissileAmmo2->Position(88, 1045);
 	mLMissileAmmo2->Scale(Vector2(1.0f, 1.0f));
 	mLMissileAmmo3 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mLMissileAmmo3->Parent(this);
-	mLMissileAmmo3->Position(113, 1035);
+	mLMissileAmmo3->Position(113, 1045);
 	mLMissileAmmo3->Scale(Vector2(1.0f, 1.0f));
 	mLMissileAmmo4 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mLMissileAmmo4->Parent(this);
-	mLMissileAmmo4->Position(76, 1045);
+	mLMissileAmmo4->Position(76, 1055);
 	mLMissileAmmo4->Scale(Vector2(1.0f, 1.0f));
 	mLMissileAmmo5 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mLMissileAmmo5->Parent(this);
-	mLMissileAmmo5->Position(101, 1045);
+	mLMissileAmmo5->Position(101, 1055);
 	mLMissileAmmo5->Scale(Vector2(1.0f, 1.0f));
 	mLMissileAmmo6 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mLMissileAmmo6->Parent(this);
-	mLMissileAmmo6->Position(126, 1045);
+	mLMissileAmmo6->Position(126, 1055);
 	mLMissileAmmo6->Scale(Vector2(1.0f, 1.0f));
 	mLMissileAmmo7 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mLMissileAmmo7->Parent(this);
-	mLMissileAmmo7->Position(64, 1055);
+	mLMissileAmmo7->Position(64, 1065);
 	mLMissileAmmo7->Scale(Vector2(1.0f, 1.0f));
 	mLMissileAmmo8 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mLMissileAmmo8->Parent(this);
-	mLMissileAmmo8->Position(89, 1055);
+	mLMissileAmmo8->Position(89, 1065);
 	mLMissileAmmo8->Scale(Vector2(1.0f, 1.0f));
 	mLMissileAmmo9 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mLMissileAmmo9->Parent(this);
-	mLMissileAmmo9->Position(113, 1055);
+	mLMissileAmmo9->Position(113, 1065);
 	mLMissileAmmo9->Scale(Vector2(1.0f, 1.0f));
 	mLMissileAmmo10 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mLMissileAmmo10->Parent(this);
-	mLMissileAmmo10->Position(139, 1055);
+	mLMissileAmmo10->Position(139, 1065);
 	mLMissileAmmo10->Scale(Vector2(1.0f, 1.0f));
 
 	//Right Battery
 
 	mRMissileAmmo1 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mRMissileAmmo1->Parent(this);
-	mRMissileAmmo1->Position(1825, 1025);
+	mRMissileAmmo1->Position(1845, 1035);
 	mRMissileAmmo1->Scale(Vector2(1.0f, 1.0f));
 	mRMissileAmmo2 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mRMissileAmmo2->Parent(this);
-	mRMissileAmmo2->Position(1813, 1035);
+	mRMissileAmmo2->Position(1833, 1045);
 	mRMissileAmmo2->Scale(Vector2(1.0f, 1.0f));
 	mRMissileAmmo3 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mRMissileAmmo3->Parent(this);
-	mRMissileAmmo3->Position(1838, 1035);
+	mRMissileAmmo3->Position(1858, 1045);
 	mRMissileAmmo3->Scale(Vector2(1.0f, 1.0f));
 	mRMissileAmmo4 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mRMissileAmmo4->Parent(this);
-	mRMissileAmmo4->Position(1801, 1045);
+	mRMissileAmmo4->Position(1821, 1055);
 	mRMissileAmmo4->Scale(Vector2(1.0f, 1.0f));
 	mRMissileAmmo5 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mRMissileAmmo5->Parent(this);
-	mRMissileAmmo5->Position(1826, 1045);
+	mRMissileAmmo5->Position(1846, 1055);
 	mRMissileAmmo5->Scale(Vector2(1.0f, 1.0f));
 	mRMissileAmmo6 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mRMissileAmmo6->Parent(this);
-	mRMissileAmmo6->Position(1851, 1045);
+	mRMissileAmmo6->Position(1871, 1055);
 	mRMissileAmmo6->Scale(Vector2(1.0f, 1.0f));
 	mRMissileAmmo7 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mRMissileAmmo7->Parent(this);
-	mRMissileAmmo7->Position(1789, 1055);
+	mRMissileAmmo7->Position(1809, 1065);
 	mRMissileAmmo7->Scale(Vector2(1.0f, 1.0f));
 	mRMissileAmmo8 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mRMissileAmmo8->Parent(this);
-	mRMissileAmmo8->Position(1814, 1055);
+	mRMissileAmmo8->Position(1834, 1065);
 	mRMissileAmmo8->Scale(Vector2(1.0f, 1.0f));
 	mRMissileAmmo9 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mRMissileAmmo9->Parent(this);
-	mRMissileAmmo9->Position(1839, 1055);
+	mRMissileAmmo9->Position(1859, 1065);
 	mRMissileAmmo9->Scale(Vector2(1.0f, 1.0f));
 	mRMissileAmmo10 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mRMissileAmmo10->Parent(this);
-	mRMissileAmmo10->Position(1864, 1055);
+	mRMissileAmmo10->Position(1884, 1065);
 	mRMissileAmmo10->Scale(Vector2(1.0f, 1.0f));
 
 	//Middle Battery
 
 	mMidMissileAmmo1 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mMidMissileAmmo1->Parent(this);
-	mMidMissileAmmo1->Position(975, 1025);
+	mMidMissileAmmo1->Position(975, 1035);
 	mMidMissileAmmo1->Scale(Vector2(1.0f, 1.0f));
 	mMidMissileAmmo2 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mMidMissileAmmo2->Parent(this);
-	mMidMissileAmmo2->Position(963, 1035);
+	mMidMissileAmmo2->Position(963, 1045);
 	mMidMissileAmmo2->Scale(Vector2(1.0f, 1.0f));
 	mMidMissileAmmo3 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mMidMissileAmmo3->Parent(this);
-	mMidMissileAmmo3->Position(988, 1035);
+	mMidMissileAmmo3->Position(988, 1045);
 	mMidMissileAmmo3->Scale(Vector2(1.0f, 1.0f));
 	mMidMissileAmmo4 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mMidMissileAmmo4->Parent(this);
-	mMidMissileAmmo4->Position(951, 1045);
+	mMidMissileAmmo4->Position(951, 1055);
 	mMidMissileAmmo4->Scale(Vector2(1.0f, 1.0f));
 	mMidMissileAmmo5 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mMidMissileAmmo5->Parent(this);
-	mMidMissileAmmo5->Position(976, 1045);
+	mMidMissileAmmo5->Position(976, 1055);
 	mMidMissileAmmo5->Scale(Vector2(1.0f, 1.0f));
 	mMidMissileAmmo6 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mMidMissileAmmo6->Parent(this);
-	mMidMissileAmmo6->Position(1001, 1045);
+	mMidMissileAmmo6->Position(1001, 1055);
 	mMidMissileAmmo6->Scale(Vector2(1.0f, 1.0f));
 	mMidMissileAmmo7 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mMidMissileAmmo7->Parent(this);
-	mMidMissileAmmo7->Position(939, 1055);
+	mMidMissileAmmo7->Position(939, 1065);
 	mMidMissileAmmo7->Scale(Vector2(1.0f, 1.0f));
 	mMidMissileAmmo8 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mMidMissileAmmo8->Parent(this);
-	mMidMissileAmmo8->Position(964, 1055);
+	mMidMissileAmmo8->Position(964, 1065);
 	mMidMissileAmmo8->Scale(Vector2(1.0f, 1.0f));
 	mMidMissileAmmo9 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mMidMissileAmmo9->Parent(this);
-	mMidMissileAmmo9->Position(989, 1055);
+	mMidMissileAmmo9->Position(989, 1065);
 	mMidMissileAmmo9->Scale(Vector2(1.0f, 1.0f));
 	mMidMissileAmmo10 = new GLTexture("MissileAmmo.png", 0, 0, 23, 9);
 	mMidMissileAmmo10->Parent(this);
-	mMidMissileAmmo10->Position(1014, 1055);
+	mMidMissileAmmo10->Position(1014, 1065);
 	mMidMissileAmmo10->Scale(Vector2(1.0f, 1.0f));
 
 

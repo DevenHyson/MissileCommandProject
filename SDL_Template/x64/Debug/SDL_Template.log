@@ -1,34 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GalagaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  AnimatedGLTexture.cpp
-  AnimatedTexture.cpp
-  AssetManager.cpp
-  AudioManager.cpp
-  BezierPath.cpp
-  BoxCollider.cpp
-  CircleCollider.cpp
-  Collider.cpp
-  GameEntity.cpp
-  GameManager.cpp
-  GLGraphics.cpp
-  GLTexture.cpp
-  Graphics.cpp
-  InputManager.cpp
-  main.cpp
-  PhysEntity.cpp
-  PhysicsManager.cpp
-  Player.cpp
   PlayScreen.cpp
-  Random.cpp
-  Generating Code...
-  Compiling...
-  Scoreboard.cpp
-  ScreenManager.cpp
-  ShaderUtil.cpp
-  StartScreen.cpp
-  Texture.cpp
-  Timer.cpp
-  tinyxml2.cpp
-  Generating Code...
   SDL_Template.vcxproj -> C:\Users\spike\OneDrive\Desktop\New folder\x64\Debug\SDLFramework.exe
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glew32.dll
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glfw3.dll
