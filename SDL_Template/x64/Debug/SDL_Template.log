@@ -1,5 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GalagaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Player.cpp
+  PlayScreen.cpp
   SDL_Template.vcxproj -> C:\Users\spike\OneDrive\Desktop\New folder\x64\Debug\SDLFramework.exe
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glew32.dll
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glfw3.dll
@@ -36,6 +36,8 @@
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SideAntiAir2.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Stars.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Target.png
+  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Untitled-10.png
+  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Untitled-9.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\MUS\GameStart.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\BossDestroyed.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\BossInjured.wav
@@ -47,6 +49,6 @@
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\WaspDestroyed.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Shaders\fs.shader
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Shaders\vs.shader
-  37 File(s) copied
+  39 File(s) copied
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Data\Level1.xml
   1 File(s) copied
