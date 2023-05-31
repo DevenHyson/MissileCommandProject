@@ -20,6 +20,14 @@ private:
 	Texture* mBuilding5;
 	Texture* mBuilding6;
 
+
+
+
+	Texture* mJoshSquare;
+
+
+
+
 	Texture* mHill1;
 	Texture* mHill2;
 	Texture* mHill3;

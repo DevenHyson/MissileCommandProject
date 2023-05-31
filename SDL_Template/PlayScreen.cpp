@@ -54,6 +54,28 @@ PlayScreen::PlayScreen() {
 	mBuilding6->Position(1125, 220);
 	mBuilding6->Scale(Vector2(0.6f, 0.2f));
 
+
+
+
+
+	//Josh Square
+
+
+
+	mJoshSquare = new GLTexture("Hill.png", 0, 150, 100, 100);
+	mJoshSquare->Parent(mBuildings);
+	mJoshSquare->Position(0, -400);
+	mJoshSquare->Scale(Vector2(1.0f, 1.0f));
+
+
+
+
+
+
+
+
+
+
 	//Hill Sprites, for some reason they won't work named what they actually are. These are the green plates under the batteries
 
 	mAntiAir1 = new GLTexture("Hill.png", 0, 0, 126, 215);
@@ -276,6 +298,12 @@ PlayScreen::~PlayScreen() {
 	mHill3 = nullptr;
 
 
+	//JoshSquare
+
+	delete mJoshSquare;
+	mJoshSquare = nullptr;
+
+
 	delete mLMissileAmmo1;
 	mLMissileAmmo1 = nullptr;
 	delete mLMissileAmmo2;
@@ -406,6 +434,12 @@ void PlayScreen::Update() {
 
 	mRoundScore->Render();
 	mGameScore->Render();
+
+	//Josh Square
+	mJoshSquare->Render();
+
+
+
 }
 
 void PlayScreen::Render() {
@@ -463,5 +497,10 @@ void PlayScreen::Render() {
 
 	mRoundScore->Render();
 	mGameScore->Render();
+
+
+	//Josh Square
+
+	mJoshSquare->Render();
 
 }
