@@ -24,9 +24,15 @@ void ScreenManager::Update() {
 		if (mInput->MouseButtonPressed(InputManager::MouseButton::Left)) {
 			mCurrentScreen = Play;
 		}
+		else if (mInput->KeyPressed(SDL_SCANCODE_ESCAPE)) {
+			SDL_Quit();
+		}
 		break;
 	case Play:
 		mPlayScreen->Update();
+		if (mInput->KeyPressed(SDL_SCANCODE_ESCAPE)) {
+			mCurrentScreen = Start;
+		}
 		break;
 	}
 }

@@ -63,9 +63,10 @@ PlayScreen::PlayScreen() {
 
 
 	mJoshSquare = new GLTexture("Hill.png", 0, 150, 100, 100);
-	mJoshSquare->Parent(mBuildings);
+	mJoshSquare->Parent(this);
 	mJoshSquare->Position(0, -400);
 	mJoshSquare->Scale(Vector2(1.0f, 1.0f));
+
 
 
 
@@ -377,69 +378,8 @@ PlayScreen::~PlayScreen() {
 
 void PlayScreen::Update() {
 	mPlayer->Update();
-	mBuilding1->Render();
-	mBuilding2->Render();
-	mBuilding3->Render();
-	mBuilding4->Render();
-	mBuilding5->Render();
-	mBuilding6->Render();
-
-	mAntiAir1->Render();
-	mAntiAir2->Render();
-	mAntiAir3->Render();
-
-
-
-
-	mGround->Render();
-
-	mHill1->Render();
-	mHill2->Render();
-	mHill3->Render();
-
-
-	mLMissileAmmo1->Render();
-	mLMissileAmmo2->Render();
-	mLMissileAmmo3->Render();
-	mLMissileAmmo4->Render();
-	mLMissileAmmo5->Render();
-	mLMissileAmmo6->Render();
-	mLMissileAmmo7->Render();
-	mLMissileAmmo8->Render();
-	mLMissileAmmo9->Render();
-	mLMissileAmmo10->Render();
-
-	mRMissileAmmo1->Render();
-	mRMissileAmmo2->Render();
-	mRMissileAmmo3->Render();
-	mRMissileAmmo4->Render();
-	mRMissileAmmo5->Render();
-	mRMissileAmmo6->Render();
-	mRMissileAmmo7->Render();
-	mRMissileAmmo8->Render();
-	mRMissileAmmo9->Render();
-	mRMissileAmmo10->Render();
-
-	mMidMissileAmmo1->Render();
-	mMidMissileAmmo2->Render();
-	mMidMissileAmmo3->Render();
-	mMidMissileAmmo4->Render();
-	mMidMissileAmmo5->Render();
-	mMidMissileAmmo6->Render();
-	mMidMissileAmmo7->Render();
-	mMidMissileAmmo8->Render();
-	mMidMissileAmmo9->Render();
-	mMidMissileAmmo10->Render();
-
-
-	mRoundScore->Render();
-	mGameScore->Render();
-
 	//Josh Square
-	mJoshSquare->Render();
-
-
-
+	mJoshSquare->Position(Vector2(Position().x, Position().y - 1));
 }
 
 void PlayScreen::Render() {
