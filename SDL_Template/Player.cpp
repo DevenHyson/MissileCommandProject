@@ -108,7 +108,7 @@ void Player::Update() {
 		}
 	}
 
-	std::cout << "Position: " << Position().x << ", " << Position().y << std::endl;
+	
 
 }
 

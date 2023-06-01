@@ -3,6 +3,18 @@
 #include "PhysicsManager.h"
 #include "GLTexture.h"
 
+bool Missile::CheckCollision(float x1, float y1, float w1, float h1, float x2, float y2, float w2, float h2) {
+	float obj1_left = x1;
+	float obj1_right = x1 + w1;
+	float obj1_top = y1;
+	float obj1_bottom = y1 + h1;
+
+	float obj2_left = x2;
+	float obj2_right = x2 + w2;
+	float obj2_top = y2;
+	float obj2_bottom = y2 + h2;
+	return obj1_right > obj2_left && obj1_left < obj2_right && obj1_bottom > obj2_top && obj1_top < obj2_bottom;
+}
 
 Missile::Missile() {
 	mTimer = Timer::Instance();
@@ -12,7 +24,7 @@ Missile::Missile() {
 	mVisible = false;
 	mWasHit = false;
 
-	mTexture = new GLTexture("Hill.png", 0, 150, 100, 100);
+	mTexture = new GLTexture("Hill.png", 0, 0, 100, 100);
 	//mTexture->Scale(Vector2(0.3f, 0.3f));
 	mTexture->Parent(this);
 	mTexture->Position(Vec2_Zero);
@@ -25,6 +37,7 @@ Missile::Missile() {
 	mSpawn.x = (float)(mRandom->RandomInt() % Graphics::Instance()->SCREEN_WIDTH);
 
 	Position(mSpawn);
+
 
 	// set random target point (6 cities, 3 turrets)
 	switch (mRandom->RandomRange(1, 6)) {
@@ -54,11 +67,9 @@ Missile::Missile() {
 	// calculate velocity of missile based on startpoint, endpoint, and movespeed (*round)
 	mVelocity = mTarget - mSpawn;
 
-	/*AddCollider(new BoxCollider(Vector2(16.0f, 67.0f)));
-	AddCollider(new BoxCollider(Vector2(20.0f, 37.0f)), Vector2(18.0f, 10.0f));
-	AddCollider(new BoxCollider(Vector2(20.0f, 37.0f)), Vector2(-18.0f, 10.0f));
+	AddCollider(new BoxCollider(Vector2(16.0f, 67.0f)));
 
-	mId = PhysicsManager::Instance()->RegisterEntity(this, PhysicsManager::CollisionLayers::Friendly);*/
+	mId = PhysicsManager::Instance()->RegisterEntity(this, PhysicsManager::CollisionLayers::Friendly);
 
 	Visible(true);
 }
@@ -91,14 +102,20 @@ bool Missile::WasHit() {
 void Missile::Update() {
 
 	// figure out what targetVector is based on start and end point
-
-	Translate(mVelocity.Normalized() * mMoveSpeed * mTimer->DeltaTime(), World);
+		if (Position().x != mTarget.x && Position().y != mTarget.y){
+			Translate(mVelocity.Normalized() * mMoveSpeed * mTimer->DeltaTime(), World);
+		}
 
 	Vector2 pos = Position(Local);
 
 	Position(pos);
-
 	// Check collision
+	if (CheckCollision(Position().x, Position().y, 38, 15, mTarget.x, mTarget.y, 204, 225)) {
+		mVelocity = 0;
+		Missile::~Missile();
+	}
+	
+	
 	// Remove from list
 	// Spawn new missile?
 }
