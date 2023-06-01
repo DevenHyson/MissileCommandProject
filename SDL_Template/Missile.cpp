@@ -3,18 +3,7 @@
 #include "PhysicsManager.h"
 #include "GLTexture.h"
 
-bool Missile::CheckCollision(float x1, float y1, float w1, float h1, float x2, float y2, float w2, float h2) {
-	float obj1_left = x1;
-	float obj1_right = x1 + w1;
-	float obj1_top = y1;
-	float obj1_bottom = y1 + h1;
 
-	float obj2_left = x2;
-	float obj2_right = x2 + w2;
-	float obj2_top = y2;
-	float obj2_bottom = y2 + h2;
-	return obj1_right > obj2_left && obj1_left < obj2_right && obj1_bottom > obj2_top && obj1_top < obj2_bottom;
-}
 
 Missile::Missile() {
 	mTimer = Timer::Instance();
@@ -43,21 +32,27 @@ Missile::Missile() {
 	switch (mRandom->RandomRange(1, 6)) {
 	case 1:
 		mTarget = Vector2(262, 1028);
+		mTargetCity = 1;
 		break;
 	case 2:
 		mTarget = Vector2(517, 1028);
+		mTargetCity = 2;
 		break;
 	case 3:
 		mTarget = Vector2(765, 1028);
+		mTargetCity = 3;
 		break;
 	case 4:
 		mTarget = Vector2(1191, 1028);
+		mTargetCity = 4;
 		break;
 	case 5:
 		mTarget = Vector2(1441, 1028);
+		mTargetCity = 5;
 		break;
 	case 6:
 		mTarget = Vector2(1692, 1028);
+		mTargetCity = 6;
 		break;
 	default:
 		std::cout << "ERROR: We should never get here.  Missile.cpp (line 51)" << std::endl;
@@ -112,10 +107,7 @@ void Missile::Update() {
 
 	Position(pos);
 	// Check collision
-	if (CheckCollision(Position().x, Position().y, 38, 15, mTarget.x, mTarget.y, 204, 225)) {
-		mVelocity = 0;
-		Missile::~Missile();
-	}
+	
 	
 	
 	// Remove from list

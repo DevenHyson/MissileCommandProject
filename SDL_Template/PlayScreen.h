@@ -4,17 +4,17 @@
 #include "AudioManager.h"
 #include "Player.h"
 #include "Missile.h"
+#include "Random.h"
 
 class PlayScreen : public GameEntity {
 private:
 	Timer* mTimer;
 	AudioManager* mAudio;
+	Random* mRandom;
 
 	Player* mPlayer;
 
-	Missile* mMissile;
-
-	//std::vector<Missile*> mMissiles;
+	std::vector<Missile*> mMissiles;
 
 	Texture* mGround;
 
@@ -87,6 +87,14 @@ private:
 
 	GameEntity* mBuildings;
 
+	// Missile Timer
+
+	float mMissileTimer;
+	float mMissileTimeDelay;
+
+
+	bool CheckCollision(float x1, float y1, float w1, float h1, float x2, float y2, float w2, float h2);
+
 
 public:
 	PlayScreen();
@@ -94,5 +102,8 @@ public:
 
 	void Update() override;
 	void Render() override;
+
+
+	void spawnMissile();
 };
 #endif

@@ -163,6 +163,7 @@ xcopy "$(ProjectDir)..\Data\*" "$(OutDir)Data\" /y /s</Command>
     <ClCompile Include="BezierPath.cpp" />
     <ClCompile Include="BoxCollider.cpp" />
     <ClCompile Include="CircleCollider.cpp" />
+    <ClCompile Include="City.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -192,6 +193,7 @@ xcopy "$(ProjectDir)..\Data\*" "$(OutDir)Data\" /y /s</Command>
     <ClInclude Include="AudioManager.h" />
     <ClInclude Include="BoxCollider.h" />
     <ClInclude Include="CircleCollider.h" />
+    <ClInclude Include="City.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="GameEntity.h" />
     <ClInclude Include="GameManager.h" />

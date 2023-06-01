@@ -5,6 +5,7 @@
 PlayScreen::PlayScreen() {
 	mTimer = Timer::Instance();
 	mAudio = AudioManager::Instance();
+	mRandom = Random::Instance();
 	SDL_ShowCursor(SDL_DISABLE);
 	delete mPlayer;
 	mPlayer = new Player();
@@ -12,7 +13,6 @@ PlayScreen::PlayScreen() {
 	mPlayer->Position(Graphics::SCREEN_WIDTH * 0.4f, Graphics::SCREEN_HEIGHT * 0.8f);
 	mPlayer->Active(true);
 
-	mMissile = new Missile();
 
 	mBuildings = new GameEntity(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.7f);
 	mBuildings->Parent(this);
@@ -259,6 +259,12 @@ PlayScreen::PlayScreen() {
 	mGameScore->Scale(Vector2(1.0f, 1.0f));
 
 
+	mMissileTimer = 0;
+	mMissileTimeDelay = 1;
+
+
+
+
 
 }
 
@@ -379,11 +385,42 @@ PlayScreen::~PlayScreen() {
 
 void PlayScreen::Update() {
 	mPlayer->Update();
-	mMissile->Update();
+	mMissileTimer += mTimer->DeltaTime();
+	if (mMissileTimer >= mMissileTimeDelay) {
+		spawnMissile();
+		mMissileTimer = 0;
+	}
+	
+	for (auto it = mMissiles.begin(); it != mMissiles.end();) {
+
+		(*it)->Update();
+		if (CheckCollision((*it)->Position().x, (*it)->Position().y, 38, 15, (*it)->Target().x, (*it)->Target().y, 204, 225)) {
+			it = mMissiles.erase(it);
+			std::cout << "missile deleted" << std::endl;
+			switch ((*it)->TargetCity()) {
+			case 1:
+				
+				break;
+			case 2:
+
+				break;
+			}
+		}
+		else {
+			++it;
+		}
+
+
+	}
+	
+
 }
 
 void PlayScreen::Render() {
 	mPlayer->Render();
+	for (auto m : mMissiles) {
+		m->Render();
+	}
 	mBuilding1->Render();
 	mBuilding2->Render();
 	mBuilding3->Render();
@@ -442,5 +479,21 @@ void PlayScreen::Render() {
 	//Josh Square
 
 	//mJoshSquare->Render();
-	mMissile->Render();
+}
+
+void PlayScreen::spawnMissile() {
+	mMissiles.push_back(new Missile());
+}
+
+bool PlayScreen::CheckCollision(float x1, float y1, float w1, float h1, float x2, float y2, float w2, float h2) {
+	float obj1_left = x1;
+	float obj1_right = x1 + w1;
+	float obj1_top = y1;
+	float obj1_bottom = y1 + h1;
+
+	float obj2_left = x2;
+	float obj2_right = x2 + w2;
+	float obj2_top = y2;
+	float obj2_bottom = y2 + h2;
+	return obj1_right > obj2_left && obj1_left < obj2_right&& obj1_bottom > obj2_top && obj1_top < obj2_bottom;
 }
