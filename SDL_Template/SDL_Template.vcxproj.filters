@@ -129,6 +129,9 @@
     <ClCompile Include="AnimatedGLTexture.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="Missile.cpp">
+      <Filter>Source Files\Galaga</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameEntity.h">
@@ -214,6 +217,9 @@
     </ClInclude>
     <ClInclude Include="AnimatedGLTexture.h">
       <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Missile.h">
+      <Filter>Header Files\Galaga</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -83,6 +83,8 @@ private:
 
 	GameEntity* mBuildings;
 
+	Texture* mMissile;
+
 
 public:
 	PlayScreen();

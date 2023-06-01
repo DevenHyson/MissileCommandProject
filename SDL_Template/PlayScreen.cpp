@@ -70,7 +70,10 @@ PlayScreen::PlayScreen() {
 
 
 
-
+	mMissile = new GLTexture("Hill.png", 0, 150, 100, 100);
+	mMissile->Parent(mBuildings);
+	mMissile->Position(-300, 220);
+	mMissile->Scale(Vector2(0.6f, 0.2f));
 
 
 
@@ -374,12 +377,16 @@ PlayScreen::~PlayScreen() {
 	delete mGameScore;
 	mGameScore = nullptr;
 
+	delete mMissile;
+	mMissile = nullptr;
+
 }
 
 void PlayScreen::Update() {
 	mPlayer->Update();
 	//Josh Square
 	mJoshSquare->Position(Vector2(Position().x, Position().y - 1));
+	mMissile->Render();
 }
 
 void PlayScreen::Render() {
@@ -437,6 +444,8 @@ void PlayScreen::Render() {
 
 	mRoundScore->Render();
 	mGameScore->Render();
+
+	
 
 
 	//Josh Square
