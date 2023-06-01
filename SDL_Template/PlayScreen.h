@@ -3,13 +3,18 @@
 #include "Timer.h"
 #include "AudioManager.h"
 #include "Player.h"
+#include "Missile.h"
 
 class PlayScreen : public GameEntity {
 private:
-	Timer * mTimer;
-	AudioManager * mAudio;
+	Timer* mTimer;
+	AudioManager* mAudio;
 
-	Player * mPlayer;
+	Player* mPlayer;
+
+	Missile* mMissile;
+
+	//std::vector<Missile*> mMissiles;
 
 	Texture* mGround;
 
@@ -24,7 +29,6 @@ private:
 
 
 	Texture* mJoshSquare;
-
 
 
 
@@ -82,8 +86,6 @@ private:
 
 
 	GameEntity* mBuildings;
-
-	Texture* mMissile;
 
 
 public:

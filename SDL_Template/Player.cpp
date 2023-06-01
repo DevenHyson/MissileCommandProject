@@ -11,7 +11,7 @@ void Player::HandleMovement() {
 
 void Player::HandleFiring() {
 	if (mInput->KeyPressed(SDL_SCANCODE_SPACE)) {
-		
+
 	}
 }
 
@@ -93,7 +93,7 @@ bool Player::WasHit() {
 }
 
 void Player::Update() {
-	
+
 	if (mAnimating) {
 
 		if (mWasHit) {
@@ -108,17 +108,19 @@ void Player::Update() {
 		}
 	}
 
+	std::cout << "Position: " << Position().x << ", " << Position().y << std::endl;
+
 }
 
 void Player::Render() {
-	
+
 	if (mVisible) {
 		if (mAnimating) {
-			
+
 		}
 		else {
 			mTarget->Render();
-			
+
 		}
 	}
 

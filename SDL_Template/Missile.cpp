@@ -32,19 +32,19 @@ Missile::Missile() {
 		mTarget = Vector2(262, 1028);
 		break;
 	case 2:
-		mTarget = Vector2(262, 1028);
+		mTarget = Vector2(517, 1028);
 		break;
 	case 3:
-		mTarget = Vector2(262, 1028);
+		mTarget = Vector2(765, 1028);
 		break;
 	case 4:
-		mTarget = Vector2(262, 1028);
+		mTarget = Vector2(1191, 1028);
 		break;
 	case 5:
-		mTarget = Vector2(262, 1028);
+		mTarget = Vector2(1441, 1028);
 		break;
 	case 6:
-		mTarget = Vector2(262, 1028);
+		mTarget = Vector2(1692, 1028);
 		break;
 	default:
 		std::cout << "ERROR: We should never get here.  Missile.cpp (line 51)" << std::endl;
