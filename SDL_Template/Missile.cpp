@@ -24,7 +24,7 @@ Missile::Missile() {
 	mVisible = false;
 	mWasHit = false;
 
-	mTexture = new GLTexture("Hill.png", 0, 0, 100, 100);
+	mTexture = new GLTexture("EnemyMissile.png", 0, 0, 38, 15);
 	//mTexture->Scale(Vector2(0.3f, 0.3f));
 	mTexture->Parent(this);
 	mTexture->Position(Vec2_Zero);
@@ -66,6 +66,8 @@ Missile::Missile() {
 
 	// calculate velocity of missile based on startpoint, endpoint, and movespeed (*round)
 	mVelocity = mTarget - mSpawn;
+
+	Rotate(mVelocity.ToAngle());
 
 	AddCollider(new BoxCollider(Vector2(16.0f, 67.0f)));
 

@@ -1,6 +1,7 @@
 #ifndef __MATHHELPER_H
 #define __MATHHELPER_H
 #include <math.h>
+#include <cmath>
 
 namespace SDLFramework {
 
@@ -31,6 +32,12 @@ namespace SDLFramework {
 			else {
 				return Vector2(x / mag, y / mag);
 			}
+		}
+
+		float ToAngle() {
+			float radians = atan2(y, x);
+			float degrees = radians * (180.0 / PI);
+			return degrees;
 		}
 
 		Vector2 & operator+=(const Vector2 & rhs) {
