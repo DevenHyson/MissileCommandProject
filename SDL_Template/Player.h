@@ -4,6 +4,8 @@
 #include "AudioManager.h"
 #include "InputManager.h"
 #include "Bullet.h"
+#include "Scoreboard.h"
+
 
 using namespace SDLFramework;
 
@@ -26,6 +28,10 @@ private:
 
 	float mMoveSpeed;
 	Vector2 mMoveBounds;
+
+	
+	
+
 
 	static const int MAX_BULLETS = 2;
 	//Bullet* mBullets[MAX_BULLETS];
@@ -54,5 +60,9 @@ public:
 
 	void Update() override;
 	void Render() override;
+
+	
+
+	
 };
 #endif

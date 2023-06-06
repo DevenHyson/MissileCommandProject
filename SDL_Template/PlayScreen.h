@@ -5,11 +5,15 @@
 #include "Player.h"
 #include "Missile.h"
 #include "Random.h"
+#include "Scoreboard.h"
+
+
 
 class PlayScreen : public GameEntity {
 private:
 	Timer* mTimer;
 	AudioManager* mAudio;
+	InputManager* mInput;
 	Random* mRandom;
 
 	Player* mPlayer;
@@ -79,11 +83,9 @@ private:
 	Texture* mMidMissileAmmo10;
 
 	// Game Scores
-	Texture* mRoundScore;
-	Texture* mGameScore;
-	int mROUNDSCORE;
-	int mGAMESCORE;
+	
 
+	
 
 	GameEntity* mBuildings;
 
@@ -95,8 +97,16 @@ private:
 
 	bool CheckCollision(float x1, float y1, float w1, float h1, float x2, float y2, float w2, float h2);
 
+	
+	int mROUNDSCORE = 0;
+	int mGAMESCORE = 0;
+
+	Scoreboard* mScoreBoard1;
+	
+
 
 public:
+
 	PlayScreen();
 	~PlayScreen();
 
@@ -105,5 +115,9 @@ public:
 
 
 	void spawnMissile();
+
+
+	
+
 };
 #endif

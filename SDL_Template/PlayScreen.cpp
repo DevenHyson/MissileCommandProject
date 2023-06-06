@@ -2,10 +2,12 @@
 
 
 
+
 PlayScreen::PlayScreen() {
 	mTimer = Timer::Instance();
 	mAudio = AudioManager::Instance();
 	mRandom = Random::Instance();
+	mInput = InputManager::Instance();
 	SDL_ShowCursor(SDL_DISABLE);
 	delete mPlayer;
 	mPlayer = new Player();
@@ -13,6 +15,13 @@ PlayScreen::PlayScreen() {
 	mPlayer->Position(Graphics::SCREEN_WIDTH * 0.4f, Graphics::SCREEN_HEIGHT * 0.8f);
 	mPlayer->Active(true);
 
+
+	
+
+	mScoreBoard1 = new Scoreboard();
+	mScoreBoard1->Parent(this);
+	mScoreBoard1->Position(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.5f);
+	mScoreBoard1->Score(mROUNDSCORE);
 
 	mBuildings = new GameEntity(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.7f);
 	mBuildings->Parent(this);
@@ -56,7 +65,7 @@ PlayScreen::PlayScreen() {
 	mBuilding6->Scale(Vector2(0.6f, 0.2f));
 
 
-
+	
 
 
 	//Josh Square
@@ -70,11 +79,12 @@ PlayScreen::PlayScreen() {
 
 
 
+	
+
+	
 
 
-
-
-
+	
 
 
 
@@ -248,21 +258,13 @@ PlayScreen::PlayScreen() {
 
 
 	//Game Scores
-	mRoundScore = new GLTexture("0", "emulogic.ttf", 36, { 200, 0, 0 });
-	mRoundScore->Parent(this);
-	mRoundScore->Position(975, 100);
-	mRoundScore->Scale(Vector2(1.0f, 1.0f));
-
-	mGameScore = new GLTexture("0", "emulogic.ttf", 36, { 200, 0, 0 });
-	mGameScore->Parent(this);
-	mGameScore->Position(575, 100);
-	mGameScore->Scale(Vector2(1.0f, 1.0f));
+	
 
 
 	mMissileTimer = 0;
 	mMissileTimeDelay = 1;
 
-
+	
 
 
 
@@ -310,6 +312,9 @@ PlayScreen::~PlayScreen() {
 
 	delete mJoshSquare;
 	mJoshSquare = nullptr;
+
+	delete mScoreBoard1;
+	mScoreBoard1 = nullptr;
 
 
 	delete mLMissileAmmo1;
@@ -376,21 +381,31 @@ PlayScreen::~PlayScreen() {
 	mMidMissileAmmo10 = nullptr;
 
 
-	delete mRoundScore;
-	mRoundScore = nullptr;
-	delete mGameScore;
-	mGameScore = nullptr;
+	
 
 }
 
 void PlayScreen::Update() {
 	mPlayer->Update();
+	mScoreBoard1->Update();
+	
+	
+	
+	if (mInput->KeyDown(SDL_SCANCODE_Y)) {
+		mROUNDSCORE += 1000;
+		std::cout << "Clicked Y" << std::endl;
+		std::cout << mROUNDSCORE << std::endl;
+		mScoreBoard1->Score(mROUNDSCORE);
+
+
+	}
+
 	mMissileTimer += mTimer->DeltaTime();
 	if (mMissileTimer >= mMissileTimeDelay) {
 		spawnMissile();
 		mMissileTimer = 0;
 	}
-	
+
 	for (auto it = mMissiles.begin(); it != mMissiles.end();) {
 
 		(*it)->Update();
@@ -421,6 +436,10 @@ void PlayScreen::Render() {
 	for (auto m : mMissiles) {
 		m->Render();
 	}
+
+	
+
+	
 	mBuilding1->Render();
 	mBuilding2->Render();
 	mBuilding3->Render();
@@ -432,6 +451,7 @@ void PlayScreen::Render() {
 	mAntiAir2->Render();
 	mAntiAir3->Render();
 
+	
 
 	mGround->Render();
 
@@ -472,8 +492,7 @@ void PlayScreen::Render() {
 	mMidMissileAmmo9->Render();
 	mMidMissileAmmo10->Render();
 
-	mRoundScore->Render();
-	mGameScore->Render();
+	mScoreBoard1->Render();
 
 
 	//Josh Square

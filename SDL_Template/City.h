@@ -1,9 +1,12 @@
 #ifndef __CITY_H
 #define __CITY_H
-#include "Texture.h"
+#include "AnimatedGLTexture.h"
+#include "AudioManager.h"
+#include "InputManager.h"
+#include "PhysEntity.h"
 
 
-class City : public GameEntity {
+class City : public PhysEntity {
 private:
 	bool mDestroyed;
 	Texture* mCity;

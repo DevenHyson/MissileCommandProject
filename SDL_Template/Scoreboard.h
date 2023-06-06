@@ -20,6 +20,8 @@ public:
 
 	void Render() override;
 
+	
+
 private:
 	void ClearBoard();
 };
