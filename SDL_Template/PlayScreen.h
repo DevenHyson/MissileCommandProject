@@ -102,8 +102,9 @@ private:
 	int mGAMESCORE = 0;
 
 	Scoreboard* mScoreBoard1;
+	Scoreboard* mScoreBoard2;
 	
-
+	int CityCheck = 0;
 
 public:
 

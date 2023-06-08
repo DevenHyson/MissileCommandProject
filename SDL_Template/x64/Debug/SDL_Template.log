@@ -1,6 +1,13 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GalagaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  GameManager.cpp
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(39,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   PlayScreen.cpp
 C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(39,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  ScreenManager.cpp
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(39,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  main.cpp
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(39,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   SDL_Template.vcxproj -> C:\Users\spike\OneDrive\Desktop\New folder\x64\Debug\SDLFramework.exe
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glew32.dll
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glfw3.dll
@@ -23,6 +30,7 @@ C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(39,18): war
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Bullet.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\CaptureBeam.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\CircleCollider.png
+  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\CityDestroyed.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Cursor.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\emulogic.ttf
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\EnemyExplosion.png
@@ -51,6 +59,6 @@ C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(39,18): war
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\WaspDestroyed.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Shaders\fs.shader
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Shaders\vs.shader
-  40 File(s) copied
+  41 File(s) copied
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Data\Level1.xml
   1 File(s) copied

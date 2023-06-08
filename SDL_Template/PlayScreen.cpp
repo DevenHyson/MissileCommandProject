@@ -20,8 +20,13 @@ PlayScreen::PlayScreen() {
 
 	mScoreBoard1 = new Scoreboard();
 	mScoreBoard1->Parent(this);
-	mScoreBoard1->Position(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.5f);
+	mScoreBoard1->Position(Graphics::SCREEN_WIDTH * 0.4f, Graphics::SCREEN_HEIGHT * 0.02f);
 	mScoreBoard1->Score(mROUNDSCORE);
+
+	mScoreBoard2 = new Scoreboard();
+	mScoreBoard2->Parent(this);
+	mScoreBoard2->Position(Graphics::SCREEN_WIDTH * 0.6f, Graphics::SCREEN_HEIGHT * 0.02f);
+	mScoreBoard2->Score(mGAMESCORE);
 
 	mBuildings = new GameEntity(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.7f);
 	mBuildings->Parent(this);
@@ -315,6 +320,8 @@ PlayScreen::~PlayScreen() {
 
 	delete mScoreBoard1;
 	mScoreBoard1 = nullptr;
+	delete mScoreBoard2;
+	mScoreBoard2 = nullptr;
 
 
 	delete mLMissileAmmo1;
@@ -399,6 +406,14 @@ void PlayScreen::Update() {
 
 
 	}
+	if (mInput->KeyDown(SDL_SCANCODE_U)) {
+		mGAMESCORE += 1000;
+		std::cout << "Clicked U" << std::endl;
+		std::cout << mGAMESCORE << std::endl;
+		mScoreBoard2->Score(mGAMESCORE);
+
+
+	}
 
 	mMissileTimer += mTimer->DeltaTime();
 	if (mMissileTimer >= mMissileTimeDelay) {
@@ -437,15 +452,20 @@ void PlayScreen::Render() {
 		m->Render();
 	}
 
-	
+	if (CityCheck == 1) {
+		//check which city was hit
+	}
+	else {
+		mBuilding1->Render();
+		mBuilding2->Render();
+		mBuilding3->Render();
+		mBuilding4->Render();
+		mBuilding5->Render();
+		mBuilding6->Render();
+	}
 
 	
-	mBuilding1->Render();
-	mBuilding2->Render();
-	mBuilding3->Render();
-	mBuilding4->Render();
-	mBuilding5->Render();
-	mBuilding6->Render();
+	
 
 	mAntiAir1->Render();
 	mAntiAir2->Render();
@@ -493,6 +513,7 @@ void PlayScreen::Render() {
 	mMidMissileAmmo10->Render();
 
 	mScoreBoard1->Render();
+	mScoreBoard2->Render();
 
 
 	//Josh Square
