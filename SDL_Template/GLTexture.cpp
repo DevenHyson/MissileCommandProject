@@ -4,10 +4,10 @@
 namespace SDLFramework {
 
 	GLTexture::GLTexture(std::string filename, bool managed)
-		: Texture(filename, managed) {
+		: Texture(filename, managed) { 
 		SetSurfaceTexture(filename, managed);
 		Data = Surface->pixels;
-
+		
 		WrapS = GL_CLAMP_TO_BORDER;
 		WrapT = GL_CLAMP_TO_BORDER;
 
@@ -19,7 +19,7 @@ namespace SDLFramework {
 	}
 
 	GLTexture::GLTexture(std::string filename, int x, int y, int w, int h, bool managed)
-		: Texture(filename, x, y, w, h, managed) {
+		: Texture(filename, x, y, w, h, managed) { 
 		SetSurfaceTexture(filename, managed);
 		Data = Surface->pixels;
 
@@ -31,7 +31,7 @@ namespace SDLFramework {
 	}
 
 	GLTexture::GLTexture(std::string text, std::string fontPath, int size, SDL_Color color, bool managed)
-		: Texture(text, fontPath, size, color, managed) {
+		: Texture(text, fontPath, size, color, managed) { 
 		SetSurfaceTextTexture(text, fontPath, size, color, managed);
 
 		WrapS = GL_CLAMP_TO_BORDER;

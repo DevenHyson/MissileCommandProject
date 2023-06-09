@@ -14,6 +14,7 @@ private:
 	AudioManager* mAudio;
 	Random* mRandom;
 
+	bool mFriendly;
 	bool mVisible;
 	bool mWasHit;
 
@@ -24,13 +25,10 @@ private:
 	Vector2 mTarget;		// end point
 
 	float mMoveSpeed;
-	Vector2 mMoveBounds;
 	int mTargetCity;
 	
-
-
 public:
-	Missile();
+	Missile(Vector2 spawnpoint=Vec2_Zero, Vector2 target=Vec2_Zero, bool friendly = false);
 	~Missile();
 
 	void Visible(bool visible);
@@ -51,6 +49,5 @@ public:
 	int TargetCity() {
 		return mTargetCity;
 	}
-
 };
 #endif

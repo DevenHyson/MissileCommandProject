@@ -10,7 +10,7 @@ namespace SDLFramework {
 
 	protected:
 		Timer* mTimer;
-
+		
 		Animation mAnim;
 
 		virtual void RunAnimation();

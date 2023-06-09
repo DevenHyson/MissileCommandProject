@@ -28,7 +28,7 @@ namespace SDLFramework {
 
 		static const short SCREEN_WIDTH = 1920;
 		static const short SCREEN_HEIGHT = 1080;
-		const char* WINDOW_TITLE = "Missile Command";
+		const char* WINDOW_TITLE = "Missile Commande";
 
 	protected:
 		static Graphics* sInstance;

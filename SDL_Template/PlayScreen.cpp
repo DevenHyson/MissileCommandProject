@@ -1,22 +1,18 @@
 #include "PlayScreen.h"
 
-
-
-
 PlayScreen::PlayScreen() {
 	mTimer = Timer::Instance();
 	mAudio = AudioManager::Instance();
 	mRandom = Random::Instance();
 	mInput = InputManager::Instance();
+
 	SDL_ShowCursor(SDL_DISABLE);
+
 	delete mPlayer;
 	mPlayer = new Player();
 	mPlayer->Parent(this);
 	mPlayer->Position(Graphics::SCREEN_WIDTH * 0.4f, Graphics::SCREEN_HEIGHT * 0.8f);
 	mPlayer->Active(true);
-
-
-	
 
 	mScoreBoard1 = new Scoreboard();
 	mScoreBoard1->Parent(this);
@@ -28,10 +24,10 @@ PlayScreen::PlayScreen() {
 	mScoreBoard2->Position(Graphics::SCREEN_WIDTH * 0.6f, Graphics::SCREEN_HEIGHT * 0.02f);
 	mScoreBoard2->Score(mGAMESCORE);
 
-	mBuildings = new GameEntity(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.7f);
-	mBuildings->Parent(this);
-
 	//Floor, long green surface
+	mBuildings = new GameEntity();
+	mBuildings->Parent(this);
+	mBuildings->Position(Graphics::SCREEN_WIDTH * 0.5f, Graphics::SCREEN_HEIGHT * 0.7f);
 
 	mGround = new GLTexture("Ground.png", 0, 0, 1920, 1080);
 	mGround->Parent(mBuildings);
@@ -39,93 +35,46 @@ PlayScreen::PlayScreen() {
 
 	//Cities
 
-	mBuilding1 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
-	mBuilding1->Parent(mBuildings);
-	mBuilding1->Position(-300, 220);
-	mBuilding1->Scale(Vector2(0.6f, 0.2f));
-
-	mBuilding2 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
-	mBuilding2->Parent(mBuildings);
-	mBuilding2->Position(-50, 220);
-	mBuilding2->Scale(Vector2(0.6f, 0.2f));
-
-	mBuilding3 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
-	mBuilding3->Parent(mBuildings);
-	mBuilding3->Position(200, 220);
-	mBuilding3->Scale(Vector2(0.6f, 0.2f));
-
-	mBuilding4 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
-	mBuilding4->Parent(mBuildings);
-	mBuilding4->Position(625, 220);
-	mBuilding4->Scale(Vector2(0.6f, 0.2f));
-
-	mBuilding5 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
-	mBuilding5->Parent(mBuildings);
-	mBuilding5->Position(875, 220);
-	mBuilding5->Scale(Vector2(0.6f, 0.2f));
-
-	mBuilding6 = new GLTexture("Building1.png", 0, 150, 1920, 1080);
-	mBuilding6->Parent(mBuildings);
-	mBuilding6->Position(1125, 220);
-	mBuilding6->Scale(Vector2(0.6f, 0.2f));
-
-
-	
-
-
-	//Josh Square
-
-
-
-	/*mJoshSquare = new GLTexture("Hill.png", 0, 150, 100, 100);
-	mJoshSquare->Parent(this);
-	mJoshSquare->Position(400, 400);
-	mJoshSquare->Scale(Vector2(1.0f, 1.0f));*/
-
-
-
-	
-
-	
-
-
-	
-
-
+	mCities.push_back(new City(Vector2(262, 1020)));
+	mCities.push_back(new City(Vector2(517, 1020)));
+	mCities.push_back(new City(Vector2(765, 1020)));
+	mCities.push_back(new City(Vector2(1191, 1020)));
+	mCities.push_back(new City(Vector2(1441, 1020)));
+	mCities.push_back(new City(Vector2(1692, 1020)));
 
 	//Hill Sprites, for some reason they won't work named what they actually are. These are the green plates under the batteries
 
-	mAntiAir1 = new GLTexture("Hill.png", 0, 0, 126, 215);
-	mAntiAir1->Parent(mBuildings);
-	mAntiAir1->Position(-860, 280);
-	mAntiAir1->Scale(Vector2(0.6f, 0.2f));
+	mHill1 = new GLTexture("Hill.png", 0, 0, 126, 215);
+	mHill1->Parent(mBuildings);
+	mHill1->Position(-860, 280);
+	mHill1->Scale(Vector2(0.6f, 0.2f));
 
-	mAntiAir2 = new GLTexture("Hill.png", 0, 0, 126, 215);
-	mAntiAir2->Parent(mBuildings);
-	mAntiAir2->Position(13, 280);
-	mAntiAir2->Scale(Vector2(0.6f, 0.2f));
+	mHill2 = new GLTexture("Hill.png", 0, 0, 126, 215);
+	mHill2->Parent(mBuildings);
+	mHill2->Position(13, 280);
+	mHill2->Scale(Vector2(0.6f, 0.2f));
 
-	mAntiAir3 = new GLTexture("Hill.png", 0, 0, 126, 215);
-	mAntiAir3->Parent(mBuildings);
-	mAntiAir3->Position(880, 280);
-	mAntiAir3->Scale(Vector2(0.6f, 0.2f));
+	mHill3 = new GLTexture("Hill.png", 0, 0, 126, 215);
+	mHill3->Parent(mBuildings);
+	mHill3->Position(880, 280);
+	mHill3->Scale(Vector2(0.6f, 0.2f));
 
 	//Anti Air Sprites, for some reason they won't work named what they actually are.
 
-	mHill1 = new GLTexture("AnitAir1.png", 0, 100, 1920, 1080);
-	mHill1->Parent(mBuildings);
-	mHill1->Position(90, 360);
-	mHill1->Scale(Vector2(1.0f, 1.0f));
+	//mAntiAir1 = new GLTexture("AnitAir1.png", 0, 100, 1920, 1080);
+	//mAntiAir1->Parent(mBuildings);
+	//mAntiAir1->Position(90, 360);
+	//mAntiAir1->Scale(Vector2(1.0f, 1.0f));
 
-	mHill2 = new GLTexture("SideAntiAir.png", 0, 100, 1920, 1080);
-	mHill2->Parent(mBuildings);
-	mHill2->Position(-782, 360);
-	mHill2->Scale(Vector2(1.0f, 1.0f));
+	//mAntiAir2 = new GLTexture("SideAntiAir.png", 0, 100, 1920, 1080);
+	//mAntiAir2->Parent(mBuildings);
+	//mAntiAir2->Position(-782, 360);
+	//mAntiAir2->Scale(Vector2(1.0f, 1.0f));
 
-	mHill3 = new GLTexture("SideAntiAir2.png", 0, 100, 1920, 1080);
-	mHill3->Parent(mBuildings);
-	mHill3->Position(957, 360);
-	mHill3->Scale(Vector2(1.0f, 1.0f));
+	//mAntiAir3 = new GLTexture("SideAntiAir2.png", 0, 100, 1920, 1080);
+	//mAntiAir3->Parent(mBuildings);
+	//mAntiAir3->Position(957, 360);
+	//mAntiAir3->Scale(Vector2(1.0f, 1.0f));
 
 	//Battery Ammo
 	//
@@ -258,21 +207,10 @@ PlayScreen::PlayScreen() {
 	mMidMissileAmmo10->Position(1014, 1065);
 	mMidMissileAmmo10->Scale(Vector2(1.0f, 1.0f));
 
-
-
-
-
 	//Game Scores
-	
-
 
 	mMissileTimer = 0;
 	mMissileTimeDelay = 1;
-
-	
-
-
-
 }
 
 PlayScreen::~PlayScreen() {
@@ -281,26 +219,16 @@ PlayScreen::~PlayScreen() {
 
 	delete mPlayer;
 	mPlayer = nullptr;
-	delete mBuilding1;
-	mBuilding1 = nullptr;
-	delete mBuilding2;
-	mBuilding2 = nullptr;
-	delete mBuilding3;
-	mBuilding3 = nullptr;
-	delete mBuilding4;
-	mBuilding4 = nullptr;
-	delete mBuilding5;
-	mBuilding5 = nullptr;
-	delete mBuilding6;
-	mBuilding6 = nullptr;
+	
+	// delete cities
 
 
-	delete mAntiAir1;
-	mAntiAir1 = nullptr;
-	delete mAntiAir2;
-	mAntiAir2 = nullptr;
-	delete mAntiAir3;
-	mAntiAir3 = nullptr;
+	//delete mAntiAir1;
+	//mAntiAir1 = nullptr;
+	//delete mAntiAir2;
+	//mAntiAir2 = nullptr;
+	//delete mAntiAir3;
+	//mAntiAir3 = nullptr;
 
 	delete mGround;
 	mGround = nullptr;
@@ -312,17 +240,10 @@ PlayScreen::~PlayScreen() {
 	delete mHill3;
 	mHill3 = nullptr;
 
-
-	//JoshSquare
-
-	delete mJoshSquare;
-	mJoshSquare = nullptr;
-
 	delete mScoreBoard1;
 	mScoreBoard1 = nullptr;
 	delete mScoreBoard2;
 	mScoreBoard2 = nullptr;
-
 
 	delete mLMissileAmmo1;
 	mLMissileAmmo1 = nullptr;
@@ -452,32 +373,19 @@ void PlayScreen::Render() {
 		m->Render();
 	}
 
-	if (CityCheck == 1) {
-		//check which city was hit
+	for (auto c : mCities) {
+		c->Render();
 	}
-	else {
-		mBuilding1->Render();
-		mBuilding2->Render();
-		mBuilding3->Render();
-		mBuilding4->Render();
-		mBuilding5->Render();
-		mBuilding6->Render();
-	}
-
-	
-	
-
-	mAntiAir1->Render();
-	mAntiAir2->Render();
-	mAntiAir3->Render();
-
-	
 
 	mGround->Render();
 
 	mHill1->Render();
 	mHill2->Render();
 	mHill3->Render();
+
+	//mAntiAir1->Render();
+	//mAntiAir2->Render();
+	//mAntiAir3->Render();
 
 	mLMissileAmmo1->Render();
 	mLMissileAmmo2->Render();
@@ -514,11 +422,6 @@ void PlayScreen::Render() {
 
 	mScoreBoard1->Render();
 	mScoreBoard2->Render();
-
-
-	//Josh Square
-
-	//mJoshSquare->Render();
 }
 
 void PlayScreen::spawnMissile() {
@@ -537,3 +440,4 @@ bool PlayScreen::CheckCollision(float x1, float y1, float w1, float h1, float x2
 	float obj2_bottom = y2 + h2;
 	return obj1_right > obj2_left && obj1_left < obj2_right&& obj1_bottom > obj2_top && obj1_top < obj2_bottom;
 }
+

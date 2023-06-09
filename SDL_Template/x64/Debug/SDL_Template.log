@@ -1,64 +1,50 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GalagaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  GameManager.cpp
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(39,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  PlayScreen.cpp
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(39,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  ScreenManager.cpp
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(39,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  main.cpp
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(39,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
-  SDL_Template.vcxproj -> C:\Users\spike\OneDrive\Desktop\New folder\x64\Debug\SDLFramework.exe
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glew32.dll
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glfw3.dll
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\libtiff-5.dll
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\libwebp-7.dll
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\SDL2.dll
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\SDL2_image.dll
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\SDL2_mixer.dll
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\SDL2_ttf.dll
+  Missile.cpp
+C:\GameDev\_Projects\Test\SDL_Template\MathHelper.h(37,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\GameDev\_Projects\Test\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\GameDev\_Projects\Test\SDL_Template\Missile.cpp(110,50): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\GameDev\_Projects\Test\SDL_Template\Missile.cpp(110,32): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  SDL_Template.vcxproj -> C:\GameDev\_Projects\Test\x64\Debug\SDLFramework.exe
+  C:\GameDev\_Projects\Test\SDL_Template\..\dep\devel\x64\glew32.dll
+  C:\GameDev\_Projects\Test\SDL_Template\..\dep\devel\x64\glfw3.dll
+  C:\GameDev\_Projects\Test\SDL_Template\..\dep\devel\x64\libtiff-5.dll
+  C:\GameDev\_Projects\Test\SDL_Template\..\dep\devel\x64\libwebp-7.dll
+  C:\GameDev\_Projects\Test\SDL_Template\..\dep\devel\x64\SDL2.dll
+  C:\GameDev\_Projects\Test\SDL_Template\..\dep\devel\x64\SDL2_image.dll
+  C:\GameDev\_Projects\Test\SDL_Template\..\dep\devel\x64\SDL2_mixer.dll
+  C:\GameDev\_Projects\Test\SDL_Template\..\dep\devel\x64\SDL2_ttf.dll
           8 file(s) copied.
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\AnimatedEnemies.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\AnitAir1.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\ARCADE.TTF
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Black.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\BomberPlane.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Bosses.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\BoxCollider.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\BroadPhaseCollider.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Building1.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Bullet.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\CaptureBeam.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\CircleCollider.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\CityDestroyed.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Cursor.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\emulogic.ttf
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\EnemyExplosion.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\EnemyMissile.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\GalagaLogo.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Ground.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Hill.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\LevelFlags.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\MissileAmmo.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\namco__.ttf
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\PlayerExplosion.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\PlayerShips.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Satallite.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SideAntiAir.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SideAntiAir2.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Stars.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Target.png
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\MUS\GameStart.wav
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\BossDestroyed.wav
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\BossInjured.wav
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\ButterflyDestroyed.wav
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\coin_credit.wav
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\Fire.wav
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\FlagSound.wav
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\PlayerExplosion.wav
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\WaspDestroyed.wav
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Shaders\fs.shader
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Shaders\vs.shader
-  41 File(s) copied
-  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Data\Level1.xml
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\AnitAir1.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\ARCADE.TTF
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\Black.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\BomberPlane.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\BoxCollider.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\BroadPhaseCollider.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\CircleCollider.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\City.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\CityDestroyed.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\emulogic.ttf
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\EnemyMissile.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\Ground.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\Hill.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\MissileAmmo.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\namco__.ttf
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\PlayerMissile.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\Satallite.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\SideAntiAir.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\SideAntiAir2.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\Target.png
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\MUS\GameStart.wav
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\SFX\BossDestroyed.wav
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\SFX\BossInjured.wav
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\SFX\ButterflyDestroyed.wav
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\SFX\coin_credit.wav
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\SFX\Fire.wav
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\SFX\FlagSound.wav
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\SFX\PlayerExplosion.wav
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\SFX\WaspDestroyed.wav
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\Shaders\fs.shader
+  C:\GameDev\_Projects\Test\SDL_Template\..\Assets\Shaders\vs.shader
+  31 File(s) copied
+  C:\GameDev\_Projects\Test\SDL_Template\..\Data\Level1.xml
   1 File(s) copied

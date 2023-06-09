@@ -1,8 +1,21 @@
---Create Sprites for bomber plane, satallite and explosions.
---Create missiles falling from the sky as well as falling from satallites and bombers.
---Add sound to explosions / possibly game start sounds or missiles firing
---Add score system, round score and game score, score added for extra missiles and extra towns as well as for each destroyed missile, bomber or satallite 
+TODO:
+
+Needs:
+	-- missiles fire from closest turret
+	-- missiles should stop at target and spawn an explosion
+	-- explosion should grow at a rate (percentage based so *1.01 = 1% growth every frame)
+	-- explosion should have circlecollider - friendly projectile 
+	-- despawn explosion once it reaches a certain size
+	-- destroy enemy missiles that collide with explosion
+
+	-- ammo class to deal with ammo display
+	-- remove ammo every shot
+	-- explosions and collision with them
+	-- Add sound to explosions / possibly game start sounds or missiles firing
+	-- Add score system, round score and game score, score added for extra missiles and extra towns as well as for each destroyed missile, bomber or satallite 
 			(10 points per missile)  (100 points per town survived)  (25 points per destroyed missile) (100 points per bomber)  (100 points per satallite)
---Cities must be turned into lives, one destroyed is one less life (destroyed every round until player gains 8,000/16,000/24,000/32,000 and so on)
---Make bomber planes and satallites move side to side (bomber plane makes it to the right after 12s, satallite 8s)
---Explosion collision
+	-Cities must be turned into lives, one destroyed is one less life (destroyed every round until player gains 8,000/16,000/24,000/32,000 and so on)
+
+Wants:
+	-- bombers, sattelites that can drop missiles
+		-Make bomber planes and satallites move side to side (bomber plane makes it to the right after 12s, satallite 8s)

@@ -48,7 +48,7 @@ namespace SDLFramework {
 
 	SDL_Texture* Graphics::LoadTexture(std::string path) {
 		if (mRenderer == nullptr) return nullptr;
-
+		
 		SDL_Texture* tex = nullptr;
 		SDL_Surface* surface = IMG_Load(path.c_str());
 
@@ -79,7 +79,7 @@ namespace SDLFramework {
 
 	SDL_Texture* Graphics::CreateTextTexture(TTF_Font* font, std::string text, SDL_Color color) {
 		if (mRenderer == nullptr) return nullptr;
-
+		
 		SDL_Surface* surface = TTF_RenderText_Solid(font, text.c_str(), color);
 
 		if (surface == nullptr) {

@@ -1,10 +1,8 @@
 #ifndef __CITY_H
 #define __CITY_H
-#include "AnimatedGLTexture.h"
-#include "AudioManager.h"
-#include "InputManager.h"
-#include "PhysEntity.h"
 
+#include "GLTexture.h"
+#include "PhysEntity.h"
 
 class City : public PhysEntity {
 private:
@@ -12,18 +10,18 @@ private:
 	Texture* mCity;
 	Texture* mCityDestroyed;
 
-
 public:
-
 	void Destroyed(bool value) { mDestroyed = value; }
-
 	bool Destroyed() { return mDestroyed; }
 
-
-
-	City();
+	City(Vector2 position);
 	~City();
 
+	// Inherited from PhysEntity
+	bool IgnoreCollisions() override;
+	void Hit(PhysEntity* other) override;
+
 	void Render() override;
-	};
+};
+
 #endif

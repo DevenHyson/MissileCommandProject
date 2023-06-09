@@ -61,7 +61,7 @@ namespace SDLFramework {
 		return scaledDimensions;
 	}
 
-	void Texture::SetSourceRect(SDL_Rect* sourceRect) {
+	void Texture::SetSourceRect(SDL_Rect * sourceRect) {
 		mSourceRect = *sourceRect;
 	}
 

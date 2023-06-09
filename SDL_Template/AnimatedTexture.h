@@ -24,8 +24,8 @@ namespace SDLFramework {
 		public Texture
 	{
 	protected:
-		Timer* mTimer;
-
+		Timer * mTimer;
+		
 		virtual void RunAnimation();
 
 	private:

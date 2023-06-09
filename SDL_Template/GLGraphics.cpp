@@ -120,7 +120,7 @@ namespace SDLFramework {
 		AssetManager::Instance()->LoadShader(vShaderPath.c_str(), fShaderPath.c_str(), nullptr, "Sprite-Default");
 		shaderUtil = AssetManager::Instance()->GetShaderUtil("Sprite-Default");
 		orthoMatrix = glm::ortho(0.0f, (float)SCREEN_WIDTH, (float)SCREEN_HEIGHT, 0.0f, -1.0f, 1.0f);
-
+		
 		shaderUtil.Use();
 		shaderUtil.SetVector2f("vertexPosition", glm::vec2(0, 0));
 		shaderUtil.SetMatrix4f("proj", orthoMatrix);
@@ -133,7 +133,7 @@ namespace SDLFramework {
 	void GLGraphics::Render() {
 		SDL_GL_SwapWindow(mWindow);
 	}
-
+	
 	bool GLGraphics::Init() {
 		if (!sInitialized) {
 			return false;
@@ -149,6 +149,6 @@ namespace SDLFramework {
 	}
 
 	GLGraphics::~GLGraphics() {
-
+	
 	}
 }

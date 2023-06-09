@@ -2,7 +2,7 @@
 #include "PhysicsHelper.h"
 #include "PhysicsManager.h"
 
-void PhysEntity::AddCollider(Collider* collider, Vector2 localPos) {
+void PhysEntity::AddCollider(Collider * collider, Vector2 localPos) {
 	collider->Parent(this);
 	collider->Position(localPos);
 	mColliders.push_back(collider);
@@ -32,7 +32,6 @@ bool PhysEntity::IgnoreCollisions() {
 
 PhysEntity::PhysEntity() {
 	mBroadPhaseCollider = nullptr;
-	mTag = "";
 	mId = 0;
 }
 
@@ -53,13 +52,31 @@ unsigned long PhysEntity::GetId() {
 	return mId;
 }
 
-bool PhysEntity::CheckCollision(PhysEntity* other)
-{
+bool PhysEntity::CheckCollision(PhysEntity * other) {
 	if (IgnoreCollisions() || other->IgnoreCollisions()) {
 		return false;
 	}
 
-	return ColliderVsColliderCheck(mBroadPhaseCollider, other->mBroadPhaseCollider);
+	bool narrowPhaseCheck = false;
+
+	if (mBroadPhaseCollider && other->mBroadPhaseCollider) {
+		narrowPhaseCheck = ColliderVsColliderCheck(mBroadPhaseCollider, other->mBroadPhaseCollider);
+	}
+	else {
+		narrowPhaseCheck = true;
+	}
+	
+	if (narrowPhaseCheck) {
+		for (int i = 0; i < mColliders.size(); i++) {
+			for (int j = 0; j < other->mColliders.size(); j++) {
+				if (ColliderVsColliderCheck(mColliders[i], other->mColliders[j])) {
+					return true;
+				}
+			}
+		}
+	}
+
+	return false;
 }
 
 void PhysEntity::Render() {
@@ -70,12 +87,4 @@ void PhysEntity::Render() {
 	if (mBroadPhaseCollider) {
 		mBroadPhaseCollider->Render();
 	}
-}
-
-void PhysEntity::SetTag(std::string tag) {
-	mTag = tag;
-}
-
-std::string PhysEntity::GetTag() {
-	return mTag;
 }

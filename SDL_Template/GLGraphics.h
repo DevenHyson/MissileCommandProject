@@ -5,7 +5,7 @@
 #include "ShaderUtil.h"
 
 namespace SDLFramework {
-
+	
 	class GLGraphics
 		: public Graphics {
 		friend class Graphics;

@@ -6,8 +6,8 @@
 #include "Missile.h"
 #include "Random.h"
 #include "Scoreboard.h"
-
-
+#include "City.h"
+#include <vector>
 
 class PlayScreen : public GameEntity {
 private:
@@ -22,27 +22,15 @@ private:
 
 	Texture* mGround;
 
-	Texture* mBuilding1;
-	Texture* mBuilding2;
-	Texture* mBuilding3;
-	Texture* mBuilding4;
-	Texture* mBuilding5;
-	Texture* mBuilding6;
-
-
-
-
-	Texture* mJoshSquare;
-
-
+	std::vector<City*> mCities;
 
 	Texture* mHill1;
 	Texture* mHill2;
 	Texture* mHill3;
 
-	Texture* mAntiAir1;
-	Texture* mAntiAir2;
-	Texture* mAntiAir3;
+	//Texture* mAntiAir1;
+	//Texture* mAntiAir2;
+	//Texture* mAntiAir3;
 
 	//Anti Air Ammo
 

@@ -1,22 +1,23 @@
 #include "Player.h"
-#include "BoxCollider.h"
-#include "PhysicsManager.h"
-
-
 
 void Player::HandleMovement() {
+	Vector2 pos;
 
-	
-	Position(mInput->MousePosition());
+	pos = mInput->MousePosition();
+
+	if (pos.y > mMoveBounds.y) {
+		pos.y = mMoveBounds.y;
+	}
+
+	Position(pos);
+
 	//Position with nothing in () returns the position
-	//Position with something in () sets the position
-	
-	
+	//Position with something in () sets the position	
 }
 
 void Player::HandleFiring() {
-	if (mInput->KeyPressed(SDL_SCANCODE_SPACE)) {
-		
+	if (mInput->MouseButtonPressed(InputManager::MouseButton::Left)) {
+		mTurret1->Fire(Position());
 	}
 }
 
@@ -26,32 +27,27 @@ Player::Player() {
 	mAudio = AudioManager::Instance();
 
 	mVisible = false;
-	mAnimating = false;
-	mWasHit = false;
 
-	mScore = 0;
-	mLives = 2;
+	mLives = 6;
 	
 	mTarget = new GLTexture("Target.png", 0, 0, 130, 130);
 	mTarget->Scale(Vector2(0.3f, 0.3f));
 	mTarget->Parent(this);
 	mTarget->Position(Vec2_Zero);
 
-	
+	mMoveBounds = Vector2(0.0f, 900.0f);
 
-	mMoveSpeed = 300.0f;
-	mMoveBounds = Vector2(0.0f, 1920.0f);
-
-	AddCollider(new BoxCollider(Vector2(16.0f, 67.0f)));
-	AddCollider(new BoxCollider(Vector2(20.0f, 37.0f)), Vector2(18.0f, 10.0f));
-	AddCollider(new BoxCollider(Vector2(20.0f, 37.0f)), Vector2(-18.0f, 10.0f));
-
-	mId = PhysicsManager::Instance()->RegisterEntity(this, PhysicsManager::CollisionLayers::Friendly);
+	mTurret1 = new Turret("AnitAir1.png");
+	mTurret1->Parent(this->Parent());
+	mTurret1->Position(972, 980);
+	mTurret2 = new Turret("SideAntiAir.png");
+	mTurret2->Parent(this->Parent());
+	mTurret2->Position(100, 980);
+	mTurret3 = new Turret("SideAntiAir2.png");
+	mTurret3->Parent(this->Parent());
+	mTurret3->Position(1840, 980);
 
 	Visible(true);
-
-	
-
 }
 
 Player::~Player() {
@@ -61,82 +57,31 @@ Player::~Player() {
 
 	delete mTarget;
 	mTarget = nullptr;
-	delete mTargetSpawn;
-	mTargetSpawn = nullptr;
-	
-
 }
 
 void Player::Visible(bool visible) {
 	mVisible = visible;
 }
 
-bool Player::IsAnimating() {
-	return mAnimating;
-	
-}
-
-int Player::Score() {
-	return mScore;
-}
-
 int Player::Lives() {
 	return mLives;
 }
 
-void Player::AddScore(int change) {
-	mScore += change;
-}
-
-bool Player::IgnoreCollisions()
-{
-	return !mVisible || mAnimating;
-}
-
-void Player::Hit(PhysEntity* other) {
-	mLives -= 1;
-	mAnimating = true;
-	mAudio->PlaySFX("SFX/PlayerExplosion.wav");
-	mWasHit = true;
-}
-
-bool Player::WasHit() {
-	return mWasHit;
-}
-
 void Player::Update() {
-	if (mAnimating) {
 
-		if (mWasHit) {
-			mWasHit = false;
-		}
-
+	if (Active()) {
+		HandleMovement();
+		HandleFiring();
 	}
-	else {
-		if (Active()) {
-			HandleMovement();
-			HandleFiring();
-			
-		}
-	}
-
-	
+	mTurret1->Update();
+	mTurret2->Update();
+	mTurret3->Update();
 
 }
 
 void Player::Render() {
-	
-	if (mVisible) {
-		if (mAnimating) {
-			
-		}
-		else {
-			mTarget->Render();
-			
-			
-		}
-	}
-	
-	
-	PhysEntity::Render();
+	mTarget->Render();
+	mTurret1->Render();
+	mTurret2->Render();
+	mTurret3->Render();
 }
