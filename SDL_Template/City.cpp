@@ -13,7 +13,8 @@ City::City(Vector2 position) {
 
 	mCityDestroyed = new GLTexture("CityDestroyed.png");
 	mCityDestroyed->Parent(this);
-	mCityDestroyed->Position(Vec2_Zero);
+	mCityDestroyed->Position(10, -20);
+	mCityDestroyed->Scale(Vector2(0.5, 0.50));
 
 	AddCollider(new BoxCollider(Vector2(mCity->ScaledDimensions().x, mCity->ScaledDimensions().y)));
 
