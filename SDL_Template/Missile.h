@@ -5,6 +5,7 @@
 #include "Timer.h"
 #include "PhysEntity.h"
 #include "Random.h"
+#include "Explosion.h"
 
 using namespace SDLFramework;
 
@@ -19,6 +20,7 @@ private:
 	bool mWasHit;
 
 	Texture* mTexture;
+	Explosion* mExplosion;
 
 	Vector2 mSpawn;			// start point
 	Vector2 mVelocity;
@@ -48,6 +50,10 @@ public:
 
 	int TargetCity() {
 		return mTargetCity;
+	}
+
+	void ExplosionComplete() {
+		std::cout << "Explosion Complete!" << std::endl;
 	}
 };
 #endif

@@ -21,6 +21,7 @@ public:
 	~Turret();
 
 	void Fire(Vector2 target);
+	Ammo* getAmmo() { return mAmmo; }
 
 	void Update() override;
 	void Render() override;

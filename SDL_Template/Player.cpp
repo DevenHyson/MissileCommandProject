@@ -17,7 +17,42 @@ void Player::HandleMovement() {
 
 void Player::HandleFiring() {
 	if (mInput->MouseButtonPressed(InputManager::MouseButton::Left)) {
-		mTurret1->Fire(Position());
+		// calculate the distance between target and each turret
+		// determine the closest (shortest vector)
+		// then fire from that turret
+
+		Vector2 vectorToTurret1;
+		Vector2 vectorToTurret2;
+		Vector2 vectorToTurret3;
+
+		vectorToTurret1 = Position() - mTurret1->Position();
+		vectorToTurret2 = Position() - mTurret2->Position();
+		vectorToTurret3 = Position() - mTurret3->Position();
+
+		float distanceToTurret1 = vectorToTurret1.Magnitude();
+		float distanceToTurret2 = vectorToTurret2.Magnitude();
+		float distanceToTurret3 = vectorToTurret3.Magnitude();
+
+		if (distanceToTurret1 < distanceToTurret2 && distanceToTurret1 < distanceToTurret3) {
+			if (mTurret1->getAmmo()->HasAmmo()) {
+				mTurret1->Fire(Position());
+			} // else try another turret
+		}
+		else if (distanceToTurret2 < distanceToTurret1 && distanceToTurret2 < distanceToTurret3) {
+			if (mTurret2->getAmmo()->HasAmmo()) {
+				mTurret2->Fire(Position());
+			}
+		}
+		else if (distanceToTurret3 < distanceToTurret1 && distanceToTurret3 < distanceToTurret2) {
+			if (mTurret3->getAmmo()->HasAmmo()) {
+				mTurret3->Fire(Position());
+			}
+		}
+		else {
+			if (mTurret1->getAmmo()->HasAmmo()) {
+				mTurret1->Fire(Position());
+			}
+		}
 	}
 }
 

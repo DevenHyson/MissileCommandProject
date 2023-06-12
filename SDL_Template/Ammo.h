@@ -15,11 +15,15 @@ public:
 	Ammo();
 	~Ammo();
 
+	bool HasAmmo() {
+		return mAmmo > 0;
+	}
+	
 	void UseAmmo();
 	void ReloadAmmo();
 
-	/*void Update() override;
-	void Render() override;*/
+	void Update() override;
+	void Render() override;
 };
 
 #endif
