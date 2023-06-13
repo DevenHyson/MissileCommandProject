@@ -33,19 +33,43 @@ void Player::HandleFiring() {
 		float distanceToTurret2 = vectorToTurret2.Magnitude();
 		float distanceToTurret3 = vectorToTurret3.Magnitude();
 
+		//TURRET 1 IS MID TURRET
+		//TURRET 2 IS LEFT TURRET
+		//TURRET 3 IS RIGHT TURREt
+
 		if (distanceToTurret1 < distanceToTurret2 && distanceToTurret1 < distanceToTurret3) {
 			if (mTurret1->getAmmo()->HasAmmo()) {
 				mTurret1->Fire(Position());
 			} // else try another turret
+			else if (mTurret2->getAmmo()->HasAmmo()){
+				mTurret2->Fire(Position());
+			}
+			else if (mTurret3->getAmmo()->HasAmmo()) {
+				mTurret3->Fire(Position());
+			}
+				
+			
 		}
 		else if (distanceToTurret2 < distanceToTurret1 && distanceToTurret2 < distanceToTurret3) {
 			if (mTurret2->getAmmo()->HasAmmo()) {
 				mTurret2->Fire(Position());
 			}
+			else if (mTurret1->getAmmo()->HasAmmo()) {
+				mTurret1->Fire(Position());
+			}
+			else if (mTurret3->getAmmo()->HasAmmo()) {
+				mTurret3->Fire(Position());
+			}
 		}
 		else if (distanceToTurret3 < distanceToTurret1 && distanceToTurret3 < distanceToTurret2) {
 			if (mTurret3->getAmmo()->HasAmmo()) {
 				mTurret3->Fire(Position());
+			}
+			else if (mTurret1->getAmmo()->HasAmmo()) {
+				mTurret1->Fire(Position());
+			}
+			else if (mTurret2->getAmmo()->HasAmmo()) {
+				mTurret2->Fire(Position());
 			}
 		}
 		else {
