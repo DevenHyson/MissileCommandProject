@@ -17,9 +17,6 @@ void Player::HandleMovement() {
 
 void Player::HandleFiring() {
 	if (mInput->MouseButtonPressed(InputManager::MouseButton::Left)) {
-		// calculate the distance between target and each turret
-		// determine the closest (shortest vector)
-		// then fire from that turret
 
 		Vector2 vectorToTurret1;
 		Vector2 vectorToTurret2;
@@ -40,15 +37,13 @@ void Player::HandleFiring() {
 		if (distanceToTurret1 < distanceToTurret2 && distanceToTurret1 < distanceToTurret3) {
 			if (mTurret1->getAmmo()->HasAmmo()) {
 				mTurret1->Fire(Position());
-			} // else try another turret
+			} 
 			else if (mTurret2->getAmmo()->HasAmmo()){
 				mTurret2->Fire(Position());
 			}
 			else if (mTurret3->getAmmo()->HasAmmo()) {
 				mTurret3->Fire(Position());
 			}
-				
-			
 		}
 		else if (distanceToTurret2 < distanceToTurret1 && distanceToTurret2 < distanceToTurret3) {
 			if (mTurret2->getAmmo()->HasAmmo()) {

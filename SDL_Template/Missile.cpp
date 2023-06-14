@@ -102,28 +102,41 @@ bool Missile::WasHit() {
 
 void Missile::Update() {
 
-	if (!mWasHit) {
-		// figure out what targetVector is based on start and end point
-		if (Position().x != mTarget.x && Position().y != mTarget.y) {
+	if (mFriendly) {
+		if (Position().y > mTarget.y) {
 			Translate(mVelocity.Normalized() * mMoveSpeed * mTimer->DeltaTime(), World);
 		}
-
-		//this->Scale(Vector2(Scale().x * 1.05, Scale().y * 1.05));
-
-		Vector2 pos = Position(Local);
-
-		Position(pos);
-
-		// Check collision
-		/*if (Position() == mTarget) {
-
-		}*/
-
-		// Remove from list
+		else {
+			Visible(false);
+		}
 
 	}
-	else {
-		Visible(false);
+
+	else
+	{
+		if (!mWasHit) {
+			// figure out what targetVector is based on start and end point
+			if (Position().x != mTarget.x && Position().y != mTarget.y) {
+				Translate(mVelocity.Normalized() * mMoveSpeed * mTimer->DeltaTime(), World);
+			}
+
+			//this->Scale(Vector2(Scale().x * 1.05, Scale().y * 1.05));
+
+			Vector2 pos = Position(Local);
+
+			Position(pos);
+
+			// Check collision
+			/*if (Position() == mTarget) {
+
+			}*/
+
+			// Remove from list
+
+		}
+		else {
+			Visible(false);
+		}
 	}
 }
 
