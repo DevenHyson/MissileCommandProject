@@ -1,5 +1,6 @@
 #include "Missile.h"
 #include "BoxCollider.h"
+#include "CircleCollider.h"
 #include "PhysicsManager.h"
 #include "GLTexture.h"
 
@@ -16,6 +17,10 @@ Missile::Missile(Vector2 spawnpoint, Vector2 target, bool friendly) {
 		mTexture = new GLTexture("PlayerMissile.png");
 		mSpawn = spawnpoint;
 		mTarget = target;
+
+		AddCollider(new CircleCollider(mTexture->ScaledDimensions().x * 0.5));
+
+		mId = PhysicsManager::Instance()->RegisterEntity(this, PhysicsManager::CollisionLayers::FriendlyProjectiles);
 	}
 	else {
 		mTexture = new GLTexture("EnemyMissile.png");
@@ -54,6 +59,10 @@ Missile::Missile(Vector2 spawnpoint, Vector2 target, bool friendly) {
 			std::cout << "ERROR: We should never get here.  Missile.cpp (line 51)" << std::endl;
 			break;
 		}
+
+		AddCollider(new CircleCollider(mTexture->ScaledDimensions().x * 0.5));
+
+		mId = PhysicsManager::Instance()->RegisterEntity(this, PhysicsManager::CollisionLayers::HostileProjectiles);
 	}
 	
 	mTexture->Parent(this);
@@ -68,9 +77,12 @@ Missile::Missile(Vector2 spawnpoint, Vector2 target, bool friendly) {
 
 	Rotate(mVelocity.ToAngle());
 
-	AddCollider(new BoxCollider(Vector2(mTexture->ScaledDimensions().x, mTexture->ScaledDimensions().y)));
+	mSize = 1.0;
+	mMaxSize = 10.0;
+	mReachedTarget = false;
 
-	mId = PhysicsManager::Instance()->RegisterEntity(this, PhysicsManager::CollisionLayers::HostileProjectiles);
+	//AddCollider(new BoxCollider(Vector2(mTexture->ScaledDimensions().x, mTexture->ScaledDimensions().y)));
+	
 
 	Visible(true);
 }
@@ -94,6 +106,7 @@ bool Missile::IgnoreCollisions()
 
 void Missile::Hit(PhysEntity* other) {
 	mWasHit = true;
+	// check for collision here
 }
 
 bool Missile::WasHit() {
@@ -102,17 +115,27 @@ bool Missile::WasHit() {
 
 void Missile::Update() {
 
+	// Player missiles
 	if (mFriendly) {
-		if (Position().y > mTarget.y) {
-			Translate(mVelocity.Normalized() * mMoveSpeed * mTimer->DeltaTime(), World);
+		if (!mReachedTarget) {
+			if (Position().y > mTarget.y) {
+				Translate(mVelocity.Normalized() * mMoveSpeed * mTimer->DeltaTime(), World);
+			}
+			else {
+				Visible(false);			// switch texture to explosion
+				mReachedTarget = true;
+			}
 		}
-		else {
-			Visible(false);
+		else {	// ASPLODE TIME
+			if (mSize < mMaxSize) {
+				mSize = mSize * (1 + (1.5 * mTimer->DeltaTime()));
+				std::cout << "Size: " << mSize << std::endl;
+				Scale(Vector2(mSize, mSize));
+			}
 		}
-
 	}
 
-	else
+	else  // Enemy Missiles
 	{
 		if (!mWasHit) {
 			// figure out what targetVector is based on start and end point

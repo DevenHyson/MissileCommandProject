@@ -26,6 +26,11 @@ private:
 	Vector2 mVelocity;
 	Vector2 mTarget;		// end point
 
+	float mSize;
+	float mMaxSize;
+
+	bool mReachedTarget;
+
 	float mMoveSpeed;
 	int mTargetCity;
 	
