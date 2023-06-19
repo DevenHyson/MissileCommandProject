@@ -12,6 +12,8 @@ Missile::Missile(Vector2 spawnpoint, Vector2 target, bool friendly) {
 	mVisible = false;
 	mWasHit = false;
 	mFriendly = friendly;
+	mExplodeFinished = false;
+	mTag = "Missile";
 
 	if (mFriendly) {
 		mTexture = new GLTexture("PlayerMissile.png");
@@ -78,11 +80,10 @@ Missile::Missile(Vector2 spawnpoint, Vector2 target, bool friendly) {
 	Rotate(mVelocity.ToAngle());
 
 	mSize = 1.0;
-	mMaxSize = 10.0;
+	mMaxSize = 5.0;
 	mReachedTarget = false;
 
 	//AddCollider(new BoxCollider(Vector2(mTexture->ScaledDimensions().x, mTexture->ScaledDimensions().y)));
-	
 
 	Visible(true);
 }
@@ -101,12 +102,21 @@ void Missile::Visible(bool visible) {
 
 bool Missile::IgnoreCollisions()
 {
-	return !mVisible;
+	if (mFriendly) {
+		return !mReachedTarget;
+	}
+	else {
+		return false;
+	}
 }
 
 void Missile::Hit(PhysEntity* other) {
 	mWasHit = true;
 	// check for collision here
+
+	if (other->GetTag() == "Missile") {
+		std::cout << "HIT!!!" << std::endl;
+	}
 }
 
 bool Missile::WasHit() {
@@ -129,8 +139,13 @@ void Missile::Update() {
 		else {	// ASPLODE TIME
 			if (mSize < mMaxSize) {
 				mSize = mSize * (1 + (1.5 * mTimer->DeltaTime()));
-				std::cout << "Size: " << mSize << std::endl;
+				//std::cout << "Size: " << mSize << std::endl;
 				Scale(Vector2(mSize, mSize));
+				//std::cout << "Collider size: " << mColliders[0]->Scale().x << std::endl;
+				ChangeCollider(new CircleCollider(mTexture->ScaledDimensions().x * 0.5));
+			}
+			else if (!mExplodeFinished) {
+				mExplodeFinished = true;
 			}
 		}
 	}
@@ -139,9 +154,12 @@ void Missile::Update() {
 	{
 		if (!mWasHit) {
 			// figure out what targetVector is based on start and end point
+	
 			if (Position().x != mTarget.x && Position().y != mTarget.y) {
 				Translate(mVelocity.Normalized() * mMoveSpeed * mTimer->DeltaTime(), World);
 			}
+
+			
 
 			//this->Scale(Vector2(Scale().x * 1.05, Scale().y * 1.05));
 
@@ -170,4 +188,8 @@ void Missile::Render() {
 	}
 
 	PhysEntity::Render();
+}
+
+bool Missile::GetExplodeFinished() {
+	return mExplodeFinished;
 }

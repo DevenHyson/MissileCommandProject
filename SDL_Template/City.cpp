@@ -43,6 +43,6 @@ bool City::IgnoreCollisions() {
 void City::Hit(PhysEntity* other) {
 	// code goes here for when city is hit
 	mDestroyed = true;
-	std::cout << "HIT!" << std::endl;
+	//std::cout << "HIT!" << std::endl;
 }
 

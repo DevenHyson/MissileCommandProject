@@ -63,7 +63,7 @@ PlayScreen::PlayScreen() {
 	//Game Scores
 
 	mMissileTimer = 0;
-	mMissileTimeDelay = 1;
+	mMissileTimeDelay = 2;
 }
 
 PlayScreen::~PlayScreen() {
@@ -121,9 +121,12 @@ void PlayScreen::Update() {
 		mMissileTimer = 0;
 	}
 
+	
+
 	for (auto it = mMissiles.begin(); it != mMissiles.end();) {
 
 		(*it)->Update();
+		
 		if (CheckCollision((*it)->Position().x, (*it)->Position().y, 38, 15, (*it)->Target().x, (*it)->Target().y, 204, 225)) {
 			it = mMissiles.erase(it);
 			std::cout << "missile deleted" << std::endl;
@@ -139,8 +142,6 @@ void PlayScreen::Update() {
 		else {
 			++it;
 		}
-
-
 	}
 	
 

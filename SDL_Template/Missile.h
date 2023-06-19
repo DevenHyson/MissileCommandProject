@@ -18,6 +18,7 @@ private:
 	bool mFriendly;
 	bool mVisible;
 	bool mWasHit;
+	bool mExplodeFinished;
 
 	Texture* mTexture;
 	//Explosion* mExplosion;
@@ -56,6 +57,8 @@ public:
 	int TargetCity() {
 		return mTargetCity;
 	}
+
+	bool GetExplodeFinished();
 
 	void ExplosionComplete() {
 		std::cout << "Explosion Complete!" << std::endl;

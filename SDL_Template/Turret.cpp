@@ -15,8 +15,16 @@ Turret::~Turret() {
 }
 
 void Turret::Update() {
-	for (auto m : mMissiles) {
-		m->Update();
+	for (auto it = mMissiles.begin(); it != mMissiles.end();) {
+
+		(*it)->Update();
+
+		if ((*it)->GetExplodeFinished()) {
+			it = mMissiles.erase(it);
+		}
+		else {
+			++it;
+		}
 	}
 
 	mAmmo->Update();
