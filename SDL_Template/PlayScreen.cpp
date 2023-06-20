@@ -96,6 +96,7 @@ void PlayScreen::Update() {
 	mPlayer->Update();
 	mScoreBoard1->Update();
 	
+
 	
 	
 	if (mInput->KeyDown(SDL_SCANCODE_Y)) {
@@ -123,16 +124,43 @@ void PlayScreen::Update() {
 
 	
 
+
+
+
+
+
+
+
 	for (auto it = mMissiles.begin(); it != mMissiles.end();) {
 
 		(*it)->Update();
+
 		
+
+		
+
+		
+
+		
+
 		if (CheckCollision((*it)->Position().x, (*it)->Position().y, 38, 15, (*it)->Target().x, (*it)->Target().y, 204, 225)) {
-			it = mMissiles.erase(it);
-			std::cout << "missile deleted" << std::endl;
+			if ((*it)->GetExplodeFinished()) {
+				mEnemyMissilesToBeDeleted.push_back(*it);
+				it = mMissiles.erase(it);
+				std::cout << "missile deleted" << std::endl;
+				mEnemyMissilesToBeDeleted.clear();
+			}
+			else {
+				++it;
+			}
+			
+			
+
+			
+
 			switch ((*it)->TargetCity()) {
 			case 1:
-				
+
 				break;
 			case 2:
 
@@ -142,9 +170,13 @@ void PlayScreen::Update() {
 		else {
 			++it;
 		}
-	}
-	
 
+		
+		
+	}
+	for (auto m : mEnemyMissilesToBeDeleted) {
+		delete m;
+	}
 }
 
 void PlayScreen::Render() {

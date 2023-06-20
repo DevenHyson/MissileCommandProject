@@ -16,6 +16,7 @@ private:
 	Ammo* mAmmo;
 	std::vector<Missile*> mMissiles;
 	std::vector<Missile*> mMissilesToBeDeleted;
+	
 
 public:
 	Turret(std::string textureFilename);

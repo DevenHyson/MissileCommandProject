@@ -91,6 +91,8 @@ private:
 
 	Scoreboard* mScoreBoard1;
 	Scoreboard* mScoreBoard2;
+
+	std::vector<Missile*> mEnemyMissilesToBeDeleted;
 	
 	int CityCheck = 0;
 
