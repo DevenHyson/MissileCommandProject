@@ -20,12 +20,19 @@ void Turret::Update() {
 		(*it)->Update();
 
 		if ((*it)->GetExplodeFinished()) {
+			mMissilesToBeDeleted.push_back(*it);
 			it = mMissiles.erase(it);
 		}
 		else {
 			++it;
 		}
 	}
+
+	for (auto m : mMissilesToBeDeleted) {
+		delete m;
+	}
+
+	mMissilesToBeDeleted.clear();
 
 	mAmmo->Update();
 }
