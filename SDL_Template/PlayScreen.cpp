@@ -96,87 +96,53 @@ void PlayScreen::Update() {
 	mPlayer->Update();
 	mScoreBoard1->Update();
 	
-
-	
-	
 	if (mInput->KeyDown(SDL_SCANCODE_Y)) {
 		mROUNDSCORE += 1000;
 		std::cout << "Clicked Y" << std::endl;
 		std::cout << mROUNDSCORE << std::endl;
 		mScoreBoard1->Score(mROUNDSCORE);
 
-
 	}
+
 	if (mInput->KeyDown(SDL_SCANCODE_U)) {
 		mGAMESCORE += 1000;
 		std::cout << "Clicked U" << std::endl;
 		std::cout << mGAMESCORE << std::endl;
 		mScoreBoard2->Score(mGAMESCORE);
 
-
 	}
 
 	mMissileTimer += mTimer->DeltaTime();
+
 	if (mMissileTimer >= mMissileTimeDelay) {
 		spawnMissile();
 		mMissileTimer = 0;
 	}
 
-	
-
-
-
-
-
-
-
-
 	for (auto it = mMissiles.begin(); it != mMissiles.end();) {
 
 		(*it)->Update();
 
-		
-
-		
-
-		
-
-		
-
 		if (CheckCollision((*it)->Position().x, (*it)->Position().y, 38, 15, (*it)->Target().x, (*it)->Target().y, 204, 225)) {
-			if ((*it)->GetExplodeFinished()) {
-				mEnemyMissilesToBeDeleted.push_back(*it);
-				it = mMissiles.erase(it);
-				std::cout << "missile deleted" << std::endl;
-				mEnemyMissilesToBeDeleted.clear();
-			}
-			else {
-				++it;
-			}
-			
-			
-
-			
-
-			switch ((*it)->TargetCity()) {
-			case 1:
-
-				break;
-			case 2:
-
-				break;
-			}
+			mMissilesToBeDeleted.push_back(*it);
+			it = mMissiles.erase(it);
+			std::cout << "missile deleted" << std::endl;
+		}
+		else if ((*it)->WasHit()) {
+			mMissilesToBeDeleted.push_back(*it);
+			it = mMissiles.erase(it);
+			std::cout << "missile deleted" << std::endl;
 		}
 		else {
 			++it;
 		}
-
-		
-		
 	}
-	for (auto m : mEnemyMissilesToBeDeleted) {
+
+	for (auto m : mMissilesToBeDeleted) {
 		delete m;
 	}
+
+	mMissilesToBeDeleted.clear();
 }
 
 void PlayScreen::Render() {

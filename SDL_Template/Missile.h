@@ -5,7 +5,6 @@
 #include "Timer.h"
 #include "PhysEntity.h"
 #include "Random.h"
-//#include "Explosion.h"
 
 using namespace SDLFramework;
 
@@ -21,7 +20,7 @@ private:
 	bool mExplodeFinished;
 
 	Texture* mTexture;
-	//Explosion* mExplosion;
+	Texture* mExplosionTexture;
 
 	Vector2 mSpawn;			// start point
 	Vector2 mVelocity;

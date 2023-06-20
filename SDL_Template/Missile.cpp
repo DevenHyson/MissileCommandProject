@@ -17,8 +17,14 @@ Missile::Missile(Vector2 spawnpoint, Vector2 target, bool friendly) {
 
 	if (mFriendly) {
 		mTexture = new GLTexture("PlayerMissile.png");
+		mExplosionTexture = new GLTexture("CircleCollider.png");
+		mExplosionTexture->Parent(this);
+		mExplosionTexture->Position(Vec2_Zero);
+
 		mSpawn = spawnpoint;
 		mTarget = target;
+
+		mMoveSpeed = 600.0f;
 
 		AddCollider(new CircleCollider(mTexture->ScaledDimensions().x * 0.5));
 
@@ -26,6 +32,8 @@ Missile::Missile(Vector2 spawnpoint, Vector2 target, bool friendly) {
 	}
 	else {
 		mTexture = new GLTexture("EnemyMissile.png");
+
+		mMoveSpeed = 150.0f;
 
 		// set random spawn point
 		mSpawn.y = 0.0f;
@@ -70,7 +78,7 @@ Missile::Missile(Vector2 spawnpoint, Vector2 target, bool friendly) {
 	mTexture->Parent(this);
 	mTexture->Position(Vec2_Zero);
 
-	mMoveSpeed = 300.0f;
+
 
 	Position(mSpawn);
 
@@ -112,7 +120,10 @@ bool Missile::IgnoreCollisions()
 
 void Missile::Hit(PhysEntity* other) {
 	mWasHit = true;
-	// check for collision here
+	
+	if (!mFriendly) {
+		// scoring goes here
+	}
 
 	if (other->GetTag() == "Missile") {
 		std::cout << "HIT!!!" << std::endl;
@@ -132,7 +143,7 @@ void Missile::Update() {
 				Translate(mVelocity.Normalized() * mMoveSpeed * mTimer->DeltaTime(), World);
 			}
 			else {
-				Visible(false);			// switch texture to explosion
+				//Visible(false);			// switch texture to explosion
 				mReachedTarget = true;
 			}
 		}
@@ -183,8 +194,11 @@ void Missile::Update() {
 
 void Missile::Render() {
 
-	if (mVisible) {
+	if (mVisible && !mReachedTarget) {
 		mTexture->Render();
+	}
+	else if (mVisible && mReachedTarget) {
+		mExplosionTexture->Render();
 	}
 
 	PhysEntity::Render();
