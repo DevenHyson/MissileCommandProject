@@ -7,11 +7,13 @@
 #include "Missile.h"
 #include <string>
 #include <vector>
+class PlayScreen;
 
 using namespace SDLFramework;
 
 class Turret : public GameEntity {
 private:
+	PlayScreen* mPlayScreen;
 	Texture* mTexture;
 	Ammo* mAmmo;
 	std::vector<Missile*> mMissiles;
@@ -19,7 +21,7 @@ private:
 	
 
 public:
-	Turret(std::string textureFilename);
+	Turret(PlayScreen* playscreen, std::string textureFilename);
 	~Turret();
 
 	void Fire(Vector2 target);

@@ -75,10 +75,11 @@ void Player::HandleFiring() {
 	}
 }
 
-Player::Player() {
+Player::Player(PlayScreen* playscreen) {
 	mTimer = Timer::Instance();
 	mInput = InputManager::Instance();
 	mAudio = AudioManager::Instance();
+	mPlayScreen = playscreen;
 
 	mVisible = false;
 
@@ -91,13 +92,13 @@ Player::Player() {
 
 	mMoveBounds = Vector2(0.0f, 900.0f);
 
-	mTurret1 = new Turret("AnitAir1.png");
+	mTurret1 = new Turret(mPlayScreen, "AnitAir1.png");
 	mTurret1->Parent(this->Parent());
 	mTurret1->Position(972, 980);
-	mTurret2 = new Turret("SideAntiAir.png");
+	mTurret2 = new Turret(mPlayScreen, "SideAntiAir.png");
 	mTurret2->Parent(this->Parent());
 	mTurret2->Position(100, 980);
-	mTurret3 = new Turret("SideAntiAir2.png");
+	mTurret3 = new Turret(mPlayScreen, "SideAntiAir2.png");
 	mTurret3->Parent(this->Parent());
 	mTurret3->Position(1840, 980);
 

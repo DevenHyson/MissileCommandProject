@@ -1,6 +1,7 @@
 #include "Turret.h"
 
-Turret::Turret(std::string textureFilename) {
+Turret::Turret(PlayScreen* playscreen, std::string textureFilename) {
+	mPlayScreen = playscreen;
 	mTexture = new GLTexture(textureFilename);
 	mTexture->Parent(this);
 	mTexture->Position(Vec2_Zero);
@@ -49,5 +50,5 @@ void Turret::Render() {
 
 void Turret::Fire(Vector2 target) {
 	mAmmo->UseAmmo();
-	mMissiles.push_back(new Missile(Position(), target, true));
+	mMissiles.push_back(new Missile(mPlayScreen, Position(), target, true));
 }

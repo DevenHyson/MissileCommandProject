@@ -9,20 +9,15 @@ PlayScreen::PlayScreen() {
 	SDL_ShowCursor(SDL_DISABLE);
 
 	delete mPlayer;
-	mPlayer = new Player();
+	mPlayer = new Player(this);
 	mPlayer->Parent(this);
 	mPlayer->Position(Graphics::SCREEN_WIDTH * 0.4f, Graphics::SCREEN_HEIGHT * 0.8f);
 	mPlayer->Active(true);
 
-	mScoreBoard1 = new Scoreboard();
-	mScoreBoard1->Parent(this);
-	mScoreBoard1->Position(Graphics::SCREEN_WIDTH * 0.4f, Graphics::SCREEN_HEIGHT * 0.02f);
-	mScoreBoard1->Score(mROUNDSCORE);
-
-	mScoreBoard2 = new Scoreboard();
-	mScoreBoard2->Parent(this);
-	mScoreBoard2->Position(Graphics::SCREEN_WIDTH * 0.6f, Graphics::SCREEN_HEIGHT * 0.02f);
-	mScoreBoard2->Score(mGAMESCORE);
+	mScoreBoard = new Scoreboard();
+	mScoreBoard->Parent(this);
+	mScoreBoard->Position(Graphics::SCREEN_WIDTH * 0.6f, Graphics::SCREEN_HEIGHT * 0.02f);
+	mScoreBoard->Score(mGAMESCORE);
 
 	//Floor, long green surface
 	mBuildings = new GameEntity();
@@ -85,30 +80,20 @@ PlayScreen::~PlayScreen() {
 	delete mHill3;
 	mHill3 = nullptr;
 
-	delete mScoreBoard1;
-	mScoreBoard1 = nullptr;
-	delete mScoreBoard2;
-	mScoreBoard2 = nullptr;
+	delete mScoreBoard;
+	mScoreBoard = nullptr;
 
 }
 
 void PlayScreen::Update() {
 	mPlayer->Update();
-	mScoreBoard1->Update();
-	
-	if (mInput->KeyDown(SDL_SCANCODE_Y)) {
-		mROUNDSCORE += 1000;
-		std::cout << "Clicked Y" << std::endl;
-		std::cout << mROUNDSCORE << std::endl;
-		mScoreBoard1->Score(mROUNDSCORE);
-
-	}
+	mScoreBoard->Update();
 
 	if (mInput->KeyDown(SDL_SCANCODE_U)) {
 		mGAMESCORE += 1000;
 		std::cout << "Clicked U" << std::endl;
 		std::cout << mGAMESCORE << std::endl;
-		mScoreBoard2->Score(mGAMESCORE);
+		mScoreBoard->Score(mGAMESCORE);
 
 	}
 
@@ -163,12 +148,11 @@ void PlayScreen::Render() {
 
 	mPlayer->Render();
 
-	mScoreBoard1->Render();
-	mScoreBoard2->Render();
+	mScoreBoard->Render();
 }
 
 void PlayScreen::spawnMissile() {
-	mMissiles.push_back(new Missile());
+	mMissiles.push_back(new Missile(this));
 }
 
 bool PlayScreen::CheckCollision(float x1, float y1, float w1, float h1, float x2, float y2, float w2, float h2) {
@@ -184,3 +168,7 @@ bool PlayScreen::CheckCollision(float x1, float y1, float w1, float h1, float x2
 	return obj1_right > obj2_left && obj1_left < obj2_right&& obj1_bottom > obj2_top && obj1_top < obj2_bottom;
 }
 
+void PlayScreen::addScore(int value) {
+	mGAMESCORE += value;
+	mScoreBoard->Score(mGAMESCORE);
+}

@@ -5,6 +5,8 @@
 #include "Timer.h"
 #include "PhysEntity.h"
 #include "Random.h"
+#include "Scoreboard.h"
+class PlayScreen;
 
 using namespace SDLFramework;
 
@@ -13,6 +15,7 @@ private:
 	Timer* mTimer;
 	AudioManager* mAudio;
 	Random* mRandom;
+	PlayScreen* mPlayScreen;
 
 	bool mFriendly;
 	bool mVisible;
@@ -35,7 +38,7 @@ private:
 	int mTargetCity;
 	
 public:
-	Missile(Vector2 spawnpoint=Vec2_Zero, Vector2 target=Vec2_Zero, bool friendly = false);
+	Missile(PlayScreen* playscreen, Vector2 spawnpoint=Vec2_Zero, Vector2 target=Vec2_Zero, bool friendly = false);
 	~Missile();
 
 	void Visible(bool visible);

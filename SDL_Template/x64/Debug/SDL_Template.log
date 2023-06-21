@@ -1,6 +1,21 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GalagaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  GameManager.cpp
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  main.cpp
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Missile.cpp
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(37,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(32,65): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(76,65): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(155,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(159,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   PlayScreen.cpp
 C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  ScreenManager.cpp
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(37,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
   SDL_Template.vcxproj -> C:\Users\spike\OneDrive\Desktop\New folder\x64\Debug\SDLFramework.exe
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glew32.dll
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glfw3.dll
@@ -27,6 +42,7 @@ C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): war
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\MissileAmmo.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\namco__.ttf
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\PlayerMissile.png
+  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\PlayerMissileExplosion.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Satallite.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SideAntiAir.png
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SideAntiAir2.png
@@ -42,6 +58,6 @@ C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): war
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\WaspDestroyed.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Shaders\fs.shader
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Shaders\vs.shader
-  31 File(s) copied
+  32 File(s) copied
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Data\Level1.xml
   1 File(s) copied

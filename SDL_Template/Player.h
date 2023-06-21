@@ -6,6 +6,7 @@
 #include "Bullet.h"
 #include "Scoreboard.h"
 #include "Turret.h"
+class PlayScreen;
 
 using namespace SDLFramework;
 
@@ -14,6 +15,7 @@ private:
 	Timer* mTimer;
 	InputManager* mInput;
 	AudioManager* mAudio;
+	PlayScreen* mPlayScreen;
 
 	bool mVisible;
 
@@ -35,7 +37,7 @@ private:
 	void HandleFiring();
 
 public:
-	Player();
+	Player(PlayScreen* playscreen);
 	~Player();
 
 	void Visible(bool visible);

@@ -3,11 +3,14 @@
 #include "CircleCollider.h"
 #include "PhysicsManager.h"
 #include "GLTexture.h"
+#include "PlayScreen.h"
 
-Missile::Missile(Vector2 spawnpoint, Vector2 target, bool friendly) {
+
+Missile::Missile(PlayScreen* playscreen, Vector2 spawnpoint, Vector2 target, bool friendly) {
 	mTimer = Timer::Instance();
 	mAudio = AudioManager::Instance();
 	mRandom = Random::Instance();
+	mPlayScreen = playscreen;
 
 	mVisible = false;
 	mWasHit = false;
@@ -122,7 +125,7 @@ void Missile::Hit(PhysEntity* other) {
 	mWasHit = true;
 	
 	if (!mFriendly) {
-		// scoring goes here
+		mPlayScreen->addScore(1000);
 	}
 
 	if (other->GetTag() == "Missile") {
