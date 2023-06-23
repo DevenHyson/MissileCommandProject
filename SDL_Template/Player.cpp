@@ -102,8 +102,12 @@ Player::Player(PlayScreen* playscreen) {
 	mTurret3->Parent(this->Parent());
 	mTurret3->Position(1840, 980);
 
+
+
 	Visible(true);
 }
+
+
 
 Player::~Player() {
 	mTimer = nullptr;

@@ -54,6 +54,8 @@ PlayScreen::PlayScreen() {
 	mHill3->Position(880, 280);
 	mHill3->Scale(Vector2(0.6f, 0.2f));
 
+	
+
 
 	//Game Scores
 
@@ -88,6 +90,12 @@ PlayScreen::~PlayScreen() {
 void PlayScreen::Update() {
 	mPlayer->Update();
 	mScoreBoard->Update();
+
+	if (mGAMESCORE % 500 == 0 && mGAMESCORE != mCheckingScore) {
+		mCheckingScore = mGAMESCORE;
+		std::cout << "Detected Multiple" << std::endl;
+		
+	}
 
 	if (mInput->KeyDown(SDL_SCANCODE_U)) {
 		mGAMESCORE += 1000;

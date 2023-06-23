@@ -124,8 +124,8 @@ bool Missile::IgnoreCollisions()
 void Missile::Hit(PhysEntity* other) {
 	mWasHit = true;
 	
-	if (!mFriendly) {
-		mPlayScreen->addScore(1000);
+	if (mFriendly) {
+		mPlayScreen->addScore(100);
 	}
 
 	if (other->GetTag() == "Missile") {

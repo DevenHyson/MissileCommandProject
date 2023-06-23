@@ -42,6 +42,7 @@ private:
 	int mGAMESCORE = 0;
 
 	Scoreboard* mScoreBoard;
+	int mCheckingScore;
 
 	int CityCheck = 0;
 

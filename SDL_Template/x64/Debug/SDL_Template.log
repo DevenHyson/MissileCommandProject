@@ -1,18 +1,10 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GalagaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  GameManager.cpp
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  main.cpp
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Missile.cpp
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(37,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(32,65): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(76,65): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(155,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(159,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   PlayScreen.cpp
 C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   ScreenManager.cpp
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(37,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  StartScreen.cpp
 C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(37,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   Generating Code...
