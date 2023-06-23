@@ -144,3 +144,9 @@ void Player::Render() {
 	mTurret2->Render();
 	mTurret3->Render();
 }
+
+void Player::ReloadAmmo() {
+	mTurret1->ReloadAmmo();
+	mTurret2->ReloadAmmo();
+	mTurret3->ReloadAmmo();
+}

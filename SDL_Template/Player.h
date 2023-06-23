@@ -45,6 +45,7 @@ public:
 	int Lives();
 
 	void AddScore(int change);
+	void ReloadAmmo();
 
 	void Update() override;
 	void Render() override;

@@ -61,6 +61,8 @@ PlayScreen::PlayScreen() {
 
 	mMissileTimer = 0;
 	mMissileTimeDelay = 2;
+
+	mGameOver = false;
 }
 
 PlayScreen::~PlayScreen() {
@@ -94,7 +96,7 @@ void PlayScreen::Update() {
 	if (mGAMESCORE % 500 == 0 && mGAMESCORE != mCheckingScore) {
 		mCheckingScore = mGAMESCORE;
 		std::cout << "Detected Multiple" << std::endl;
-		
+		mPlayer->ReloadAmmo();
 	}
 
 	if (mInput->KeyDown(SDL_SCANCODE_U)) {
@@ -136,6 +138,16 @@ void PlayScreen::Update() {
 	}
 
 	mMissilesToBeDeleted.clear();
+
+	if (mCities[0]->Destroyed() &&
+		mCities[1]->Destroyed() &&
+		mCities[2]->Destroyed() &&
+		mCities[3]->Destroyed() &&
+		mCities[4]->Destroyed() &&
+		mCities[5]->Destroyed()) {
+		mGameOver = true;
+		std::cout << "GAME OVER DUDE!" << std::endl;
+	}
 }
 
 void PlayScreen::Render() {

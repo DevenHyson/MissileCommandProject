@@ -46,6 +46,8 @@ private:
 
 	int CityCheck = 0;
 
+	bool mGameOver;
+
 public:
 
 	void addScore(int value);

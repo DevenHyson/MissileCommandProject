@@ -26,6 +26,7 @@ public:
 
 	void Fire(Vector2 target);
 	Ammo* getAmmo() { return mAmmo; }
+	void ReloadAmmo();
 
 	void Update() override;
 	void Render() override;

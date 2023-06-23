@@ -52,3 +52,7 @@ void Turret::Fire(Vector2 target) {
 	mAmmo->UseAmmo();
 	mMissiles.push_back(new Missile(mPlayScreen, Position(), target, true));
 }
+
+void Turret::ReloadAmmo() {
+	mAmmo->ReloadAmmo();
+}
