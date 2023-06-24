@@ -1,13 +1,11 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GalagaSDL.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  PlayScreen.cpp
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  ScreenManager.cpp
+  Missile.cpp
 C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(37,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  StartScreen.cpp
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(37,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Generating Code...
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(33,65): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(77,65): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(159,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\Missile.cpp(163,70): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   SDL_Template.vcxproj -> C:\Users\spike\OneDrive\Desktop\New folder\x64\Debug\SDLFramework.exe
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glew32.dll
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\dep\devel\x64\glfw3.dll
@@ -43,13 +41,19 @@ C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\MathHelper.h(38,18): war
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\BossDestroyed.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\BossInjured.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\ButterflyDestroyed.wav
+  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\CityExplodeNoise.wav
+  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\CityRebuild.mp3
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\coin_credit.wav
+  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\ExplodeNoise.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\Fire.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\FlagSound.wav
+  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\GameOver.wav
+  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\GameStart.mp3
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\PlayerExplosion.wav
+  C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\Reload.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\SFX\WaspDestroyed.wav
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Shaders\fs.shader
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Assets\Shaders\vs.shader
-  32 File(s) copied
+  38 File(s) copied
   C:\Users\spike\OneDrive\Desktop\New folder\SDL_Template\..\Data\Level1.xml
   1 File(s) copied

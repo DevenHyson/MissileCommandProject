@@ -6,6 +6,7 @@
 #include "PlayScreen.h"
 
 
+
 Missile::Missile(PlayScreen* playscreen, Vector2 spawnpoint, Vector2 target, bool friendly) {
 	mTimer = Timer::Instance();
 	mAudio = AudioManager::Instance();
@@ -17,17 +18,17 @@ Missile::Missile(PlayScreen* playscreen, Vector2 spawnpoint, Vector2 target, boo
 	mFriendly = friendly;
 	mExplodeFinished = false;
 	mTag = "Missile";
+	
 
 	if (mFriendly) {
 		mTexture = new GLTexture("PlayerMissile.png");
 		mExplosionTexture = new GLTexture("CircleCollider.png");
 		mExplosionTexture->Parent(this);
 		mExplosionTexture->Position(Vec2_Zero);
-
 		mSpawn = spawnpoint;
 		mTarget = target;
 
-		mMoveSpeed = 600.0f;
+		mMoveSpeed = 300.0f;
 
 		AddCollider(new CircleCollider(mTexture->ScaledDimensions().x * 0.5));
 
@@ -42,7 +43,7 @@ Missile::Missile(PlayScreen* playscreen, Vector2 spawnpoint, Vector2 target, boo
 		mSpawn.y = 0.0f;
 		mSpawn.x = (float)(mRandom->RandomInt() % Graphics::Instance()->SCREEN_WIDTH);
 
-		// set random target point (6 cities, 3 turrets)
+		// set random target point (6 cities)
 		switch (mRandom->RandomRange(1, 6)) {
 		case 1:
 			mTarget = Vector2(262, 1028);
@@ -123,17 +124,17 @@ bool Missile::IgnoreCollisions()
 
 void Missile::Hit(PhysEntity* other) {
 	mWasHit = true;
-	
-	if (mFriendly) {
-		mPlayScreen->addScore(100);
+	if (mFriendly && mDebounce == 0) {
+		mDebounce += 1;
+			mPlayScreen->addScore(100);
 	}
-
 	if (other->GetTag() == "Missile") {
 		std::cout << "HIT!!!" << std::endl;
 	}
 }
 
 bool Missile::WasHit() {
+
 	return mWasHit;
 }
 
@@ -143,11 +144,14 @@ void Missile::Update() {
 	if (mFriendly) {
 		if (!mReachedTarget) {
 			if (Position().y > mTarget.y) {
+
 				Translate(mVelocity.Normalized() * mMoveSpeed * mTimer->DeltaTime(), World);
+				
 			}
 			else {
 				//Visible(false);			// switch texture to explosion
 				mReachedTarget = true;
+				mAudio->PlaySFX("SFX/ExplodeNoise.wav");
 			}
 		}
 		else {	// ASPLODE TIME
@@ -191,6 +195,8 @@ void Missile::Update() {
 		}
 		else {
 			Visible(false);
+			mAudio->PlaySFX("SFX/CityExplodeNoise.wav");
+			
 		}
 	}
 }

@@ -32,9 +32,50 @@ void Player::HandleFiring() {
 
 		//TURRET 1 IS MID TURRET
 		//TURRET 2 IS LEFT TURRET
-		//TURRET 3 IS RIGHT TURREt
+		//TURRET 3 IS RIGHT TURRET
+
+
 
 		if (distanceToTurret1 < distanceToTurret2 && distanceToTurret1 < distanceToTurret3) {
+			if (mTurret1->getAmmo()->HasAmmo()) {
+				mTurret1->Fire(Position());
+			}
+			else if (mTurret2->getAmmo()->HasAmmo() && distanceToTurret2 < distanceToTurret3) {
+				mTurret2->Fire(Position());
+			}
+			else if (mTurret3->getAmmo()->HasAmmo() && distanceToTurret3 < distanceToTurret2) {
+				mTurret3->Fire(Position());
+			}
+		}
+		else if (distanceToTurret2 < distanceToTurret1 && distanceToTurret2 < distanceToTurret3) {
+			if (mTurret2->getAmmo()->HasAmmo()) {
+				mTurret2->Fire(Position());
+			}
+			else if (mTurret1->getAmmo()->HasAmmo()) {
+				mTurret1->Fire(Position());
+			}
+			else if (mTurret3->getAmmo()->HasAmmo()) {
+				mTurret3->Fire(Position());
+			}
+		}
+		else if (distanceToTurret3 < distanceToTurret1 && distanceToTurret3 < distanceToTurret2) {
+			if (mTurret3->getAmmo()->HasAmmo()) {
+				mTurret3->Fire(Position());
+			}
+			else if (mTurret1->getAmmo()->HasAmmo()) {
+				mTurret1->Fire(Position());
+			}
+			else if (mTurret2->getAmmo()->HasAmmo()) {
+				mTurret2->Fire(Position());
+			}
+		}
+		else {
+			if (mTurret1->getAmmo()->HasAmmo()) {
+				mTurret1->Fire(Position());
+			}
+		}
+
+		/*if (distanceToTurret1 < distanceToTurret2 && distanceToTurret1 < distanceToTurret3) {
 			if (mTurret1->getAmmo()->HasAmmo()) {
 				mTurret1->Fire(Position());
 			} 
@@ -72,6 +113,7 @@ void Player::HandleFiring() {
 				mTurret1->Fire(Position());
 			}
 		}
+		*/
 	}
 }
 
@@ -82,8 +124,6 @@ Player::Player(PlayScreen* playscreen) {
 	mPlayScreen = playscreen;
 
 	mVisible = false;
-
-	mLives = 6;
 	
 	mTarget = new GLTexture("Target.png", 0, 0, 130, 130);
 	mTarget->Scale(Vector2(0.3f, 0.3f));

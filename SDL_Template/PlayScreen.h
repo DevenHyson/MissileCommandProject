@@ -7,6 +7,7 @@
 #include "Random.h"
 #include "City.h"
 #include <vector>
+#include "Texture.h"
 
 class PlayScreen : public GameEntity {
 private:
@@ -28,9 +29,15 @@ private:
 	Texture* mHill2;
 	Texture* mHill3;
 
+	GLTexture* mGameOverText;
+	GLTexture* mInformationText1;
+	GLTexture* mInformationText2;
+	GLTexture* mInformationText3;
+
 	// Game Scores
 	
 	GameEntity* mBuildings;
+	GameEntity* mBottomBar;
 
 	// Missile Timer
 
@@ -40,13 +47,17 @@ private:
 	bool CheckCollision(float x1, float y1, float w1, float h1, float x2, float y2, float w2, float h2);
 
 	int mGAMESCORE = 0;
+	int mReviveToken;
+	bool mEnd = false;
+	bool mGameStart = true;
+
+
 
 	Scoreboard* mScoreBoard;
 	int mCheckingScore;
 
 	int CityCheck = 0;
-
-	bool mGameOver;
+	bool mGameOver = false;
 
 public:
 

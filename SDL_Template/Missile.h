@@ -33,6 +33,7 @@ private:
 	float mMaxSize;
 
 	bool mReachedTarget;
+	int mDebounce = 0;
 
 	float mMoveSpeed;
 	int mTargetCity;
